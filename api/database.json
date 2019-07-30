@@ -1,0 +1,130 @@
+{
+  "photos": [
+    {
+      "id": 1,
+      "userid": 1,
+      "url": "https://pin.it/24toafnottrhw3"
+    },
+    {
+      "id": 2,
+      "userid": 1,
+      "url": "https://photos.google.com/photo/AF1QipP8fGxN6YD0mG1Ddiq2bVdoJN5MBoxUwKXLo6ew"
+    },
+    {
+      "id": 3,
+      "userid": 2,
+      "url": "https://photos.google.com/album/AF1QipMZ_AIyGmIAl9CtIFFhGR8KtxADsKTF110FqQcq/photo/AF1QipPzxeB_-j2orTlXw0rAcMT08q3O6q43tkLBjNoK"
+    },
+    {
+      "id": 4,
+      "userid": 2,
+      "url": "https://photos.google.com/album/AF1QipMZ_AIyGmIAl9CtIFFhGR8KtxADsKTF110FqQcq/photo/AF1QipOCzogp6zrJrNbZfpPRk_OWVxaIiGcY45ULdfwR"
+    },
+    {
+      "id": 5,
+      "userid": 3,
+      "url": "https://photos.google.com/album/AF1QipMZ_AIyGmIAl9CtIFFhGR8KtxADsKTF110FqQcq/photo/AF1QipPB3yMJu5yWInkdXlPy_CMlnvzrvqoi99JpTs6t"
+    },
+    {
+      "id": 6,
+      "userid": 3,
+      "url": "https://photos.google.com/album/AF1QipMZ_AIyGmIAl9CtIFFhGR8KtxADsKTF110FqQcq/photo/AF1QipPcX0TQYxe_5SaU6hcr6YNi4QWZZXcgoljmh9Dv"
+    }
+  ],
+  "quotes": [
+    {
+      "id": 1,
+      "userid": 1,
+      "quote": "It’s ridiculously fun and addicting, but it does make me want to throw things. -Caroline Brownlee"
+    },
+    {
+      "id": 2,
+      "userid": 1,
+      "quote": "You’re better than you think you are! Don’t doubt yourself. Self-doubt will take you down! -Caroline Brownlee"
+    },
+    {
+      "id": 3,
+      "userid": 2,
+      "quote": "When something is important enough, you do it even if the odds are not in your favor. -Elon Musk"
+    },
+    {
+      "id": 4,
+      "userid": 2,
+      "quote": "If you think you can, you can.  If think you can't, you can't. -Anonymous"
+    },
+    {
+      "id": 5,
+      "userid": 3,
+      "quote": "It's all talk until the code works. -Anonymous"
+    },
+    {
+      "id": 6,
+      "userid": 3,
+      "quote": "Do it like Joe or Steve or Mo or Madi or Dom or ... BUT Just Do It! -Guess Who?"
+    }
+  ],
+  "ideas": [
+    {
+      "id": 1,
+      "userid": 1,
+      "idea": "Let's go play volleyball."
+    },
+    {
+      "id": 2,
+      "userid": 1,
+      "idea": "Let's go play ping pong."
+    },
+    {
+      "id": 3,
+      "userid": 2,
+      "idea": "Let's have a bake-off benefiting the Children's hospital."
+    },
+    {
+      "id": 4,
+      "userid": 2,
+      "idea": "Let's have a blood drive."
+    },
+    {
+      "id": 5,
+      "userid": 3,
+      "idea": "Let's have a hackathon and award prizes to the top performers."
+    },
+    {
+      "id": 6,
+      "userid": 3,
+      "idea": "Let's play board games!"
+    }
+  ],
+  "activities": [
+    {
+      "id": 1,
+      "userid": 1,
+      "activity_url": "https://www.eventbrite.com/e/wine-on-the-river-nashville-tickets-52284000854?aff=ebdssbcitybrowse"
+    },
+    {
+      "id": 2,
+      "userid": 1,
+      "activity_url": "https://www.eventbrite.com/e/music-city-with-the-belles-tickets-55139855793?aff=ebdssbcitybrowse"
+    },
+    {
+      "id": 3,
+      "userid": 2,
+      "activity_url": "https://www.eventbrite.com/e/2019-nashville-brew-fest-tickets-62226707758?aff=ebdssbcitybrowse"
+    },
+    {
+      "id": 4,
+      "userid": 2,
+      "activity_url": "https://www.eventbrite.com/e/wallows-tickets-65212934643?aff=ebdssbcitybrowse"
+    },
+    {
+      "id": 5,
+      "userid": 3,
+      "activity_url": "https://www.eventbrite.com/e/2019-outloud-music-festival-tickets-62936535873?aff=ebdssbcitybrowse"
+    },
+    {
+      "id": 6,
+      "userid": 3,
+      "activity_url": "https://www.eventbrite.com/e/breakaway-music-festival-tennessee-tickets-55719367127?aff=ebdssbcitybrowse"
+    }
+  ]
+}
