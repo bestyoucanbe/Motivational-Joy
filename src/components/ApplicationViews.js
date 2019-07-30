@@ -20,23 +20,23 @@ class ApplicationViews extends Component {
             })
         })
 
-        QuoteManager.getAll().then(allQuotes => {
-            this.setState({
-                quotes: allQuotes
-            })
-        })
+        // QuoteManager.getAll().then(allQuotes => {
+        //     this.setState({
+        //         quotes: allQuotes
+        //     })
+        // })
 
-        IdeaManager.getAll().then(allIdeas => {
-            this.setState({
-                ideas: allIdeas
-            })
-        })
+        // IdeaManager.getAll().then(allIdeas => {
+        //     this.setState({
+        //         ideas: allIdeas
+        //     })
+        // })
 
-        ActivityManager.getAll().then(allActivities => {
-            this.setState({
-                activities: allActivities
-            })
-        })
+        // ActivityManager.getAll().then(allActivities => {
+        //     this.setState({
+        //         activities: allActivities
+        //     })
+        // })
     }
 
 //TODO:  Delete this code later----FROM Here 1
@@ -59,19 +59,19 @@ class ApplicationViews extends Component {
           <React.Fragment>
             <Route
               exact
-              path="/My Favorites"
+              path="/My_Favorites"
               render={props => {
                 //The path is to my favorites
                 return <MyFavorites photos={this.state.photos}
-                                    quotes={this.state.quotes}
-                                    ideas={this.state.ideas}
-                                    activities={this.state.activities}
+                                    // quotes={this.state.quotes}
+                                    // ideas={this.state.ideas}
+                                    // activities={this.state.activities}
                                      />
               }}
             />
-            <Route
+            {/* <Route
               exact
-              path="/My Items"
+              path="/My_Items"
               render={props => {
                 //The path is to my items
                 return <MyItems photos={this.state.photos}
@@ -83,7 +83,7 @@ class ApplicationViews extends Component {
             />
             <Route
               exact
-              path="/All Items"
+              path="/All_Items"
               render={props => {
                 //The path is to all items
                 return <AllItems  photos={this.state.photos}
@@ -92,7 +92,7 @@ class ApplicationViews extends Component {
                                   activities={this.state.activities}
                                      />
               }}
-            />
+            /> */}
           </React.Fragment>
         )
     }
