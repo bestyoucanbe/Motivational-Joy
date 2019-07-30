@@ -35,32 +35,38 @@
     {
       "id": 1,
       "userid": 1,
-      "quote": "It’s ridiculously fun and addicting, but it does make me want to throw things. -Caroline Brownlee"
+      "quote": "It’s ridiculously fun and addicting, but it does make me want to throw things.",
+      "author": "Caroline Brownlee"
     },
     {
       "id": 2,
       "userid": 1,
-      "quote": "You’re better than you think you are! Don’t doubt yourself. Self-doubt will take you down! -Caroline Brownlee"
+      "quote": "You’re better than you think you are! Don’t doubt yourself. Self-doubt will take you down!",
+      "author": "Caroline Brownlee"
     },
     {
       "id": 3,
       "userid": 2,
-      "quote": "When something is important enough, you do it even if the odds are not in your favor. -Elon Musk"
+      "quote": "When something is important enough, you do it even if the odds are not in your favor.",
+      "author": "Elon Musk"
     },
     {
       "id": 4,
       "userid": 2,
-      "quote": "If you think you can, you can.  If think you can't, you can't. -Anonymous"
+      "quote": "If you think you can, you can.  If think you can't, you can't.",
+      "author":  "Anonymous"
     },
     {
       "id": 5,
       "userid": 3,
-      "quote": "It's all talk until the code works. -Anonymous"
+      "quote": "It's all talk until the code works.",
+      "author": "Anonymous"
     },
     {
       "id": 6,
       "userid": 3,
-      "quote": "Do it like Joe or Steve or Mo or Madi or Dom or ... BUT Just Do It! -Guess Who?"
+      "quote": "How BADLY do you want it?",
+      "author": "Guess who?"
     }
   ],
   "ideas": [

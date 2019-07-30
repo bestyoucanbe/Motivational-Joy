@@ -2,11 +2,12 @@ import React, { Component } from "react"
 import NavBar from "./nav/NavBar" //Child component
 import ApplicationViews from "./ApplicationViews" //Child component
 
-import "./Kennel.css"
-import "bootstrap/dist/css/bootstrap.min.css"
+//TODO: Delete later---
+// import "./Kennel.css"
+// import "bootstrap/dist/css/bootstrap.min.css"
 
 
-export default class Kennel extends Component {
+export default class MotivationJoy extends Component {
     render() {
         return (
             <React.Fragment>
