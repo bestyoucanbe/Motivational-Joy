@@ -1,0 +1,8 @@
+.photos {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 10rem;
+}
