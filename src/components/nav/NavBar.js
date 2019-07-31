@@ -63,46 +63,102 @@
 //   }
 // }
 
-import React, { Component } from "react";
-import { Button, Dropdown, Menu, Icon } from "semantic-ui-react";
-import { Link, withRouter} from "react-router-dom";
-import './NavBar.css'
+// import React, { Component } from "react";
+// import { Button, Dropdown, Menu, Icon } from "semantic-ui-react";
+// import { Link, withRouter} from "react-router-dom"
 
 
-class NavBar extends Component {
-  // state = { activeItem: "",
-  //           redirect: false};
-  //--Above not in use yet--//
- // handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+// class NavBar extends Component {
+//   // state = { activeItem: "",
+//   //           redirect: false};
+//   //--Above not in use yet--//
+//  // handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
-//  handleLogOut = () => {
-//    sessionStorage.clear()
-//    this.props.history.push("/")
-//    window.location.reload();
-//  }
+// //  handleLogOut = () => {
+// //    sessionStorage.clear()
+// //    this.props.history.push("/")
+// //    window.location.reload();
+// //  }
 
-render() {
+// render() {
+//     return (
+//       <Menu borderless size="huge">
+//         <Menu.Item header as="h2">
+//           Motivation Joy
+//         </Menu.Item>
+//         <Dropdown item icon="sidebar">
+//           <Dropdown.Menu>
+//             <Dropdown.Item>
+//               <Link to="/My_Favorites">My Favorites</Link>
+//             </Dropdown.Item>
+//             <Dropdown.Item>
+//               <Link to="/My_Items">My Items</Link>
+//             </Dropdown.Item>
+//             <Dropdown.Item>
+//               <Link to="/All_Items">All Items</Link>
+//             </Dropdown.Item>
+//           </Dropdown.Menu>
+//         </Dropdown>
+//       </Menu>
+//     );
+//   }
+// }
+
+// export default withRouter(NavBar)
+
+import React from 'react';
+import { Link } from "react-router-dom"
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
+
+export default class Example extends React.Component {
+  state = {
+    isOpen: false
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+  render() {
     return (
-      <Menu borderless size="huge">
-        <Menu.Item header as="h2">
-          Motivation Joy
-        </Menu.Item>
-        <Dropdown item icon="sidebar">
-          <Dropdown.Menu>
-            <Dropdown.Item>
-              <Link to="/My_Favorites">My Favorites</Link>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Link to="/My_Items">My Items</Link>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Link to="/All_Items">All Items</Link>
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      </Menu>
+      <div>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  Options
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem>
+                  <Link to="/My_Favorites">My Favorites</Link>
+                  </DropdownItem>
+                  <DropdownItem>
+                    Option 2
+                  </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>
+                    Reset
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
     );
   }
 }
-
-export default withRouter(NavBar)
