@@ -3,7 +3,6 @@ import React, { Component } from "react"
 import { withRouter } from 'react-router'
 import MyFavorites from './myfavorites/MyFavorites'
 import PhotoManager from '../modules/PhotoManager'
-import UserManager from '../modules/UserManager'
 import Login from './Login'
 
 class ApplicationViews extends Component {
@@ -37,12 +36,6 @@ class ApplicationViews extends Component {
         // ActivityManager.getAll().then(allActivities => {
         //     this.setState({
         //         activities: allActivities
-        //     })
-        // })
-
-        // UserManager.getAll().then(allUsers => {
-        //     this.setState({
-        //         users: allUsers
         //     })
         // })
     }
