@@ -3,6 +3,8 @@ import React, { Component } from "react"
 import { withRouter } from 'react-router'
 import MyFavorites from './myfavorites/MyFavorites'
 import PhotoManager from '../modules/PhotoManager'
+import UserManager from '../modules/UserManager'
+import Login from './Login'
 
 class ApplicationViews extends Component {
 
@@ -20,11 +22,11 @@ class ApplicationViews extends Component {
             })
         })
 
-        // QuoteManager.getAll().then(allQuotes => {
-        //     this.setState({
-        //         quotes: allQuotes
-        //     })
-        // })
+        //QuoteManager.getAll().then(allQuotes => {
+          //  this.setState({
+            //    quotes: allQuotes
+           // })
+        //})
 
         // IdeaManager.getAll().then(allIdeas => {
         //     this.setState({
@@ -35,6 +37,12 @@ class ApplicationViews extends Component {
         // ActivityManager.getAll().then(allActivities => {
         //     this.setState({
         //         activities: allActivities
+        //     })
+        // })
+
+        // UserManager.getAll().then(allUsers => {
+        //     this.setState({
+        //         users: allUsers
         //     })
         // })
     }
@@ -59,11 +67,19 @@ class ApplicationViews extends Component {
           <React.Fragment>
             <Route
               exact
+              path="/login"
+              render={props => {
+                //The path is to my favorites
+                return <Login {...props}/>
+              }}
+            />
+            <Route
+              exact
               path="/My_Favorites"
               render={props => {
                 //The path is to my favorites
                 return <MyFavorites photos={this.state.photos}
-                                    // quotes={this.state.quotes}
+                                    //quotes={this.state.quotes}
                                     // ideas={this.state.ideas}
                                     // activities={this.state.activities}
                                      />
@@ -93,6 +109,7 @@ class ApplicationViews extends Component {
                                      />
               }}
             /> */}
+            {/* Login Route Needed */}
           </React.Fragment>
         )
     }

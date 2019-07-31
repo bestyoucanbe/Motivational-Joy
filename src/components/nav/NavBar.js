@@ -114,8 +114,8 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,
+  // NavItem,
+  // NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -147,7 +147,7 @@ export default class Example extends React.Component {
                   <Link to="/My_Favorites">My Favorites</Link>
                   </DropdownItem>
                   <DropdownItem>
-                    Option 2
+                  <Link to="/login">Login</Link>
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>

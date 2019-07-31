@@ -1,4 +1,17 @@
-{
+{ "users": [
+  { "id": 1,
+    "username": "Joy",
+    "password": "Joy"
+  },
+  { "id": 2,
+    "username": "Joe",
+    "password": "Joe"
+  },
+  { "id": 3,
+    "username": "Ben",
+    "password": "Ben"
+  }
+  ],
   "photos": [
     {
       "id": 1,

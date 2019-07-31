@@ -21,6 +21,21 @@ export default class MyFavorites extends Component {
           )
         )}
       </section>
+    //   <section className="quotes">
+    //   {this.props.quotes.map(
+    //     quote => (
+    //       <div key={quote.id} className="card">
+    //         <p>{quote.quote}</p>
+    //         <p>{quote.author}</p>
+    //         <div className="card-body">
+    //           <a href="#" className="btn btn-primary">
+    //             **CHANGE THIS**
+    //           </a>
+    //         </div>
+    //       </div>
+    //     )
+    //   )}
+    // </section>
     )
   }
 }
