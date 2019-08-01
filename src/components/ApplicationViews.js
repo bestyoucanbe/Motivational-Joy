@@ -3,6 +3,8 @@ import React, { Component } from "react"
 import { withRouter } from 'react-router'
 import MyFavorites from './myfavorites/MyFavorites'
 import PhotoManager from '../modules/PhotoManager'
+import QuoteManager from '../modules/QuoteManager'
+import EventbriteManager from '../modules/EventbriteManager'
 import Login from './Login'
 
 class ApplicationViews extends Component {
@@ -11,7 +13,8 @@ class ApplicationViews extends Component {
     photos: [],
     quotes: [],
     ideas: [],
-    activities: []
+    activities: [],
+    events: []
   }
       componentDidMount() {
         //Each manager section contains the API calls to the database
@@ -21,11 +24,11 @@ class ApplicationViews extends Component {
             })
         })
 
-        //QuoteManager.getAll().then(allQuotes => {
-          //  this.setState({
-            //    quotes: allQuotes
-           // })
-        //})
+        QuoteManager.getAll().then(allQuotes => {
+           this.setState({
+               quotes: allQuotes
+           })
+        })
 
         // IdeaManager.getAll().then(allIdeas => {
         //     this.setState({
@@ -38,6 +41,13 @@ class ApplicationViews extends Component {
         //         activities: allActivities
         //     })
         // })
+
+        EventbriteManager.getEventsByTime("this_week").then(allEventsNashville => {
+            this.setState({
+                events: allEventsNashville.events
+            })
+            console.log("Eventbrite events", allEventsNashville)
+        })
     }
 
 //TODO:  Delete this code later----FROM Here 1
@@ -72,7 +82,7 @@ class ApplicationViews extends Component {
               render={props => {
                 //The path is to my favorites
                 return <MyFavorites photos={this.state.photos}
-                                    //quotes={this.state.quotes}
+                                    quotes={this.state.quotes}
                                     // ideas={this.state.ideas}
                                     // activities={this.state.activities}
                                      />
@@ -102,7 +112,7 @@ class ApplicationViews extends Component {
                                      />
               }}
             /> */}
-            {/* Login Route Needed */}
+            {/* Logout Route Needed */}
           </React.Fragment>
         )
     }
