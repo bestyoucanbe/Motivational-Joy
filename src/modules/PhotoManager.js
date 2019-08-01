@@ -6,5 +6,8 @@ export default {
   },
   getAll() {
     return fetch(`${remoteURL}/photos`).then(e => e.json())
+  },
+  getSpecificInfo(incomingstring) {
+    return fetch(`${remoteURL}/${incomingstring}`).then(e => e.json())
   }
 }

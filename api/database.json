@@ -80,6 +80,12 @@
       "userid": 3,
       "quote": "How BADLY do you want it?",
       "author": "Guess who?"
+    },
+    {
+      "id": 7,
+      "userid": 4,
+      "quote": "This too shall pass!",
+      "author": "Anonymous"
     }
   ],
   "ideas": [

@@ -2,6 +2,7 @@ import { Route } from 'react-router-dom'
 import React, { Component } from "react"
 import { withRouter } from 'react-router'
 import MyFavorites from './myfavorites/MyFavorites'
+import MyPhotos from './changephotos/MyPhotos'
 import PhotoManager from '../modules/PhotoManager'
 import QuoteManager from '../modules/QuoteManager'
 import IdeaManager from '../modules/IdeaManager'
@@ -20,7 +21,9 @@ class ApplicationViews extends Component {
   }
       componentDidMount() {
         //Each manager section contains the API calls to the database
-        PhotoManager.getAll().then(allPhotos => {
+        console.log("session storage id", sessionStorage.getItem("id"))
+        PhotoManager.getSpecificInfo(`photos?userid=${+sessionStorage.getItem("id")}`)
+            .then(allPhotos => {
             this.setState({
                 photos: allPhotos
             })
@@ -87,6 +90,15 @@ class ApplicationViews extends Component {
                                     quotes={this.state.quotes}
                                     ideas={this.state.ideas}
                                     activities={this.state.activities}
+                                     />
+              }}
+            />
+            <Route
+              exact
+              path="/Change_Photos"
+              render={props => {
+                //The path is to my favorites
+                return <MyPhotos photos={this.state.photos}
                                      />
               }}
             />

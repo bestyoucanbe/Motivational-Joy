@@ -134,24 +134,25 @@ export default class Example extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarBrand href="/">Motivation Joy</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Options
+                  What would you like to do?
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
                   <Link to="/My_Favorites">My Favorites</Link>
                   </DropdownItem>
+                  <DropdownItem divider />
                   <DropdownItem>
-                  <Link to="/login">Login</Link>
+                  <Link to="/Change_Photos">Change Photos</Link>
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
-                    Reset
+                  <Link to="/logout">Logout</Link>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
