@@ -1,4 +1,17 @@
-{
+{ "users": [
+  { "id": 1,
+    "username": "Joy",
+    "password": "Joy"
+  },
+  { "id": 2,
+    "username": "Joe",
+    "password": "Joe"
+  },
+  { "id": 3,
+    "username": "Ben",
+    "password": "Ben"
+  }
+  ],
   "photos": [
     {
       "id": 1,
@@ -105,31 +118,37 @@
     {
       "id": 1,
       "userid": 1,
+      "user_description":  "Wine festival",
       "activity_url": "https://www.eventbrite.com/e/wine-on-the-river-nashville-tickets-52284000854?aff=ebdssbcitybrowse"
     },
     {
       "id": 2,
       "userid": 1,
+      "user_description":  "Music City Belles",
       "activity_url": "https://www.eventbrite.com/e/music-city-with-the-belles-tickets-55139855793?aff=ebdssbcitybrowse"
     },
     {
       "id": 3,
       "userid": 2,
+      "user_description":  "Nashville Brew Fest",
       "activity_url": "https://www.eventbrite.com/e/2019-nashville-brew-fest-tickets-62226707758?aff=ebdssbcitybrowse"
     },
     {
       "id": 4,
       "userid": 2,
+      "user_description":  "The Wallows",
       "activity_url": "https://www.eventbrite.com/e/wallows-tickets-65212934643?aff=ebdssbcitybrowse"
     },
     {
       "id": 5,
       "userid": 3,
+      "user_description":  "Outloud Music Festival",
       "activity_url": "https://www.eventbrite.com/e/2019-outloud-music-festival-tickets-62936535873?aff=ebdssbcitybrowse"
     },
     {
       "id": 6,
       "userid": 3,
+      "user_description":  "Breakway Music Festival",
       "activity_url": "https://www.eventbrite.com/e/breakaway-music-festival-tennessee-tickets-55719367127?aff=ebdssbcitybrowse"
     }
   ]

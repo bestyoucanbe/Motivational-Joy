@@ -8,6 +8,16 @@
   justify-content: space-evenly;
 }
 
+.idea-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.activity-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .card {
   width: 10rem;
 }
