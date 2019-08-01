@@ -4,6 +4,8 @@ import { withRouter } from 'react-router'
 import MyFavorites from './myfavorites/MyFavorites'
 import PhotoManager from '../modules/PhotoManager'
 import QuoteManager from '../modules/QuoteManager'
+import IdeaManager from '../modules/IdeaManager'
+import ActivityManager from '../modules/ActivityManager'
 import EventbriteManager from '../modules/EventbriteManager'
 import Login from './Login'
 
@@ -30,17 +32,17 @@ class ApplicationViews extends Component {
            })
         })
 
-        // IdeaManager.getAll().then(allIdeas => {
-        //     this.setState({
-        //         ideas: allIdeas
-        //     })
-        // })
+        IdeaManager.getAll().then(allIdeas => {
+            this.setState({
+                ideas: allIdeas
+            })
+        })
 
-        // ActivityManager.getAll().then(allActivities => {
-        //     this.setState({
-        //         activities: allActivities
-        //     })
-        // })
+        ActivityManager.getAll().then(allActivities => {
+            this.setState({
+                activities: allActivities
+            })
+        })
 
         EventbriteManager.getEventsByTime("this_week").then(allEventsNashville => {
             this.setState({
@@ -83,8 +85,8 @@ class ApplicationViews extends Component {
                 //The path is to my favorites
                 return <MyFavorites photos={this.state.photos}
                                     quotes={this.state.quotes}
-                                    // ideas={this.state.ideas}
-                                    // activities={this.state.activities}
+                                    ideas={this.state.ideas}
+                                    activities={this.state.activities}
                                      />
               }}
             />
