@@ -7,8 +7,7 @@ export default class MyFavorites extends Component {
   }
   render() {
     return (
-      <div>
-        <section className="photo-container">
+      <div className="allitems-container">
           {this.props.photos.map(eachphoto => (
             <div key={eachphoto.id} className="card border border-primary">
               <img
@@ -23,8 +22,6 @@ export default class MyFavorites extends Component {
               </div>
             </div>
           ))}
-        </section>
-        <section className="quote-container mt-2">
           {this.props.quotes.map(eachquote => (
             <div key={eachquote.id} className="card text-white bg-danger mb-3">
               <div className="card-body">
@@ -37,8 +34,6 @@ export default class MyFavorites extends Component {
               </div>
             </div>
           ))}
-        </section>
-        <section className="idea-container mt-2">
           {this.props.ideas.map(eachidea => (
             <div key={eachidea.id} className="card text-white bg-success mb-3">
               <div className="card-body">
@@ -50,8 +45,6 @@ export default class MyFavorites extends Component {
               </div>
             </div>
           ))}
-        </section>
-        <section className="activity-container mt-2">
           {this.props.activities.map(eachactivity => (
             <div key={eachactivity.id} className="card text-white bg-primary mb-3">
               <div className="card-body">
@@ -63,7 +56,6 @@ export default class MyFavorites extends Component {
               </div>
             </div>
           ))}
-        </section>
       </div>
     )
   }
