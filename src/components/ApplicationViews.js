@@ -39,8 +39,18 @@ class ApplicationViews extends Component {
       })
     })
   }
-  componentDidMount() {
 
+  updateQuote = (editedQuoteObject) => {
+    return QuoteManager.put(editedQuoteObject)
+    .then(() => QuoteManager.getAll())
+    .then(allquotes => {
+      this.setState({
+        quotes: allquotes
+      })
+    })
+  }
+
+  componentDidMount() {
     //Each manager section contains the API calls to the database
 
     this.getMyPhotos() //Calls the function to get photos for the active user from the database.
@@ -100,17 +110,35 @@ class ApplicationViews extends Component {
           path="/My_Photos"
           render={props => {
             //The path is to my favorites
-            return <MyPhotos photos={this.state.photos}
-                             appViewsGetMyPhotos={this.getMyPhotos} />
+            return (
+              <MyPhotos
+                photos={this.state.photos}
+                appViewsGetMyPhotos={this.getMyPhotos}
+              />
+            )
           }}
         />
         <Route
           exact
           path="/My_Quotes"
           render={props => {
-            return <MyQuotes  quotes={this.state.quotes}
-                              appViewsGetMyQuotes={this.getMyQuotes}/>
-
+            return (
+              <MyQuotes
+                quotes={this.state.quotes}
+                appViewsGetMyQuotes={this.getMyQuotes}
+              />
+            )
+          }}
+        />
+        <Route
+          path="/My_Quotes/:quoteId(\d+)/edit"
+          render={props => {
+            return (
+              <QuoteEditForm
+                {...props}
+                updateQuote={this.updateQuote}
+              />
+            )
           }}
         />
         {/* <Route

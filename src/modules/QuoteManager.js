@@ -18,5 +18,14 @@ export default {
       },
       body:  JSON.stringify(newQuote)
     }).then(data => data.json())
+  },
+  put(editedQuote) {
+    return fetch(`${remoteURL}/quotes/${editedQuote.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedQuote)
+    }).then(data => data.json());
   }
 }

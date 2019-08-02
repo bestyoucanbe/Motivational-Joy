@@ -91,6 +91,16 @@
       "userid": 1,
       "url": "https://lh3.googleusercontent.com/XlKQtVTEx28cHYdDwD0kCtIpghSIFVC7SzaZM6fpcS7HzpivrwQ2FTlZk-o-RRVJhugsQoPKNPcK_0UF1L0taOMcSKWDVK8CHi8nzjAIJtXo_dmuIE60ctm9SfUw2JDgE-_nb91voR7qu6BPdXZuDV21O9x_fHSTgoVW0v65PeEuqzcL1BO2bzHiusHVTCCR4qMfl2qWWrkieDW0zNd2EjcyJTpdHMyVJ87MC2RhNX9GTHscNTp8wx7Bu-KTbLQtWotzeVvVBqqK_h7RfYJa_NLZa8zL5fmVWmoz740VSu6dVl4c1mMNMwd6fRNZwMs3pPA8qLqYPQKCB1QYs6IZnvCirszEHJrjtqJ9koLyUuRASPkqCGy3zcmsN2KOlI5nrptM7hajnLFcrfW7qbpRiYuVWzdathPcz3J3Mi4LSGV-1SwDbN6pwsp1I98f98opG7JsBdVG1LgVVAEL7WR39jH3TdUYBW5NznmW9tUxD0lXQaCiTAtVwqYYMX3toHw8X_5kG8yh22bwrIgvhd2huclS1y1PGYtGTKc6TBVFqvPD4rB2szb2fy2upQ_CHPevtueUgOZt8EQB26-ewNYhynILVzK_I6gWv5156-Eph__ahdd_DpKXYDlx2VpRnDpBoIDsKVHTvA2MxKX6JPXDZLXgpEhT_frA=w1498-h843-no",
       "id": 15
+    },
+    {
+      "userid": 1,
+      "url": "https://lh3.googleusercontent.com/mPj4Vd4NQ9aZL5dMLZqi9TS1kufI0G_VFUWSVSP83Hi5cfDmhzNnYaxbClSoXlCVuj8sOXpZG61KsIw5Ask1MCzYuFGewEpe0NGkSVMO6jZChyK_W8TfC_dC-J3RAT8wHcqeKalTH_635bUUSLQd4lDWrpaTEGp27kfd4ajWF6iqpGx1P5BPKOCE-lG-J2HwlVnLhpENt0SmK5XXvpFnyp0tNIak4zR2E_eP5gy7lFx8mT1G1byn89zssyXlD93jGoGRkTH4R5J_CDh1_t7DcAnpsH6djno4FTMI_vdU9ICOOTCST2J3p0Km_aPs9NlQlgJmAShm64Nb3dCp8N8K17nRKTtSygAngtmYeFqFDctMak4r80ZfZffX-Dtv3daR5sJAkynVEusZxRSoRTagyurVPn76oLZkcUfU5diGErANK64bs81pkBcPNiXWzY_5Z94kopyzik87ArD-1q_EVTAsZa3CRWGA0uoO16wFZb9sPWFYCiyXuw83rVilxgnPyaQFXJpha-q8BHLoRVXzLTluVYyqmM1X5ydoD9zm_0wcutz848CYKx4daK-8PYBraJ-buyaqjGQA4w3Zn2YTQR8XVpN0ckjF2KOrFjuxjCUPmBPAKakv1pbnlB2yHJy1FC9tWZNgvxp-FVfnhfwn5EF5e2MKVUDr=w1498-h843-no",
+      "id": 16
+    },
+    {
+      "userid": 1,
+      "url": "https://lh3.googleusercontent.com/mPj4Vd4NQ9aZL5dMLZqi9TS1kufI0G_VFUWSVSP83Hi5cfDmhzNnYaxbClSoXlCVuj8sOXpZG61KsIw5Ask1MCzYuFGewEpe0NGkSVMO6jZChyK_W8TfC_dC-J3RAT8wHcqeKalTH_635bUUSLQd4lDWrpaTEGp27kfd4ajWF6iqpGx1P5BPKOCE-lG-J2HwlVnLhpENt0SmK5XXvpFnyp0tNIak4zR2E_eP5gy7lFx8mT1G1byn89zssyXlD93jGoGRkTH4R5J_CDh1_t7DcAnpsH6djno4FTMI_vdU9ICOOTCST2J3p0Km_aPs9NlQlgJmAShm64Nb3dCp8N8K17nRKTtSygAngtmYeFqFDctMak4r80ZfZffX-Dtv3daR5sJAkynVEusZxRSoRTagyurVPn76oLZkcUfU5diGErANK64bs81pkBcPNiXWzY_5Z94kopyzik87ArD-1q_EVTAsZa3CRWGA0uoO16wFZb9sPWFYCiyXuw83rVilxgnPyaQFXJpha-q8BHLoRVXzLTluVYyqmM1X5ydoD9zm_0wcutz848CYKx4daK-8PYBraJ-buyaqjGQA4w3Zn2YTQR8XVpN0ckjF2KOrFjuxjCUPmBPAKakv1pbnlB2yHJy1FC9tWZNgvxp-FVfnhfwn5EF5e2MKVUDr=w1498-h843-no",
+      "id": 17
     }
   ],
   "quotes": [
@@ -141,6 +151,12 @@
       "quote": "Make this work",
       "author": "Joy",
       "id": 9
+    },
+    {
+      "userid": 1,
+      "quote": "Joe Shep is coming around...",
+      "author": "Joe Shep",
+      "id": 10
     }
   ],
   "ideas": [

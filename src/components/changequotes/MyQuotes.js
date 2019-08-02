@@ -71,8 +71,16 @@ export default class MyQuotes extends Component {
                 <h5 class="card-title">Quote</h5>
                 <p>{eachquote.quote}</p>
                 <p>{eachquote.author}</p>
-                <a href="#" className="btn btn-primary">
-                  **CHANGE THIS**
+                <a
+                  href="#"
+                  className="btn btn-primary"
+                  onClick={() => {
+                    this.props.history.push(
+                      `/My_Quotes/${this.props.quote.id}/edit`
+                    )
+                  }}
+                >
+                  EDIT
                 </a>
               </div>
             </div>
