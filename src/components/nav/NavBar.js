@@ -150,6 +150,9 @@ export default class Example extends React.Component {
                   <DropdownItem>
                   <Link to="/My_Photos">My Photos</Link>
                   </DropdownItem>
+                  <DropdownItem>
+                  <Link to="/My_Quotes">My Quotes</Link>
+                  </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
                   <Link to="/logout">Logout</Link>

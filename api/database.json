@@ -135,6 +135,12 @@
       "userid": 4,
       "quote": "This too shall pass!",
       "author": "Anonymous"
+    },
+    {
+      "userid": 1,
+      "quote": "Make this work",
+      "author": "Joy",
+      "id": 9
     }
   ],
   "ideas": [

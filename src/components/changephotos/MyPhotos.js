@@ -8,9 +8,6 @@ export default class MyPhotos extends Component {
   state = {
     value: ""
   }
-  componentDidMount() {
-    console.log(this.props)
-  }
 
   handleOnChange = (event) => {
     console.log("I changed",event.target.value)
@@ -18,17 +15,18 @@ export default class MyPhotos extends Component {
 
   }
 
+  currentUserId = parseInt(sessionStorage.getItem("id"))
+
   handleOnClick = () => {
     const newPhoto = {
       userid: this.currentUserId,
       url: this.state.value
     }
     PhotoManager.post(newPhoto).then(() => {
-        this.setState({value: ""})
+        this.setState({value: ""}) //Clears the field of its values
         this.props.appViewsGetMyPhotos()
     })
   }
-  currentUserId = parseInt(sessionStorage.getItem("id"))
 
   render() {
     return (

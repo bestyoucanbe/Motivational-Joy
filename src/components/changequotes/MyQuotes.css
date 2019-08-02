@@ -1,0 +1,13 @@
+.quote-page-container {
+  display: flex;
+}
+
+.quote-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 10rem;
+}

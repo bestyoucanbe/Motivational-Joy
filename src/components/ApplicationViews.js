@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import { withRouter } from "react-router"
 import MyFavorites from "./myfavorites/MyFavorites"
 import MyPhotos from "./changephotos/MyPhotos"
+import MyQuotes from "./changequotes/MyQuotes"
 import PhotoManager from "../modules/PhotoManager"
 import QuoteManager from "../modules/QuoteManager"
 import IdeaManager from "../modules/IdeaManager"
@@ -18,6 +19,7 @@ class ApplicationViews extends Component {
     activities: [],
     events: []
   }
+
   getMyPhotos = () => {
     PhotoManager.getSpecificInfo(
       `photos?userid=${+sessionStorage.getItem("id")}`
@@ -28,22 +30,24 @@ class ApplicationViews extends Component {
     })
   }
 
-  componentDidMount() {
-    //Each manager section contains the API calls to the database
-    console.log("session storage id", sessionStorage.getItem("id"))
-    this.getMyPhotos()
-    // PhotoManager.getSpecificInfo(`photos?userid=${+sessionStorage.getItem("id")}`)
-    //     .then(allPhotos => {
-    //     this.setState({
-    //         photos: allPhotos
-    //     })
-    // })
-
-    QuoteManager.getAll().then(allQuotes => {
+  getMyQuotes = () => {
+    QuoteManager.getSpecificInfo(
+      `quotes?userid=${parseInt(sessionStorage.getItem("id"))}`
+    ).then(allQuotes => {
       this.setState({
         quotes: allQuotes
       })
     })
+  }
+  componentDidMount() {
+
+    //Each manager section contains the API calls to the database
+
+    this.getMyPhotos() //Calls the function to get photos for the active user from the database.
+
+    this.getMyQuotes() //Calls the function to get quotes for the active user from the database.
+
+    //FIXME:  Write functions for each section that gets data for the active user.
 
     IdeaManager.getAll().then(allIdeas => {
       this.setState({
@@ -64,21 +68,6 @@ class ApplicationViews extends Component {
       console.log("Eventbrite events", allEventsNashville)
     })
   }
-
-  //TODO:  Delete this code later----FROM Here 1
-  // The deleteAnimal function is defined here (and then passed to the AnimalList component)
-  // deleteAnimal = id => {
-  //     return fetch(`http://localhost:5002/animals/${id}`, {
-  //         method: "DELETE"
-  //     })
-  //     .then(() => fetch(`http://localhost:5002/animals`))
-  //     .then(animals => animals.json())
-  //     .then(animals => this.setState({
-  //         animals: animals
-  //     })
-  //   )
-  // }
-  //TODO:  Delete this code later----TO Here 1
 
   render() {
     return (
@@ -113,6 +102,15 @@ class ApplicationViews extends Component {
             //The path is to my favorites
             return <MyPhotos photos={this.state.photos}
                              appViewsGetMyPhotos={this.getMyPhotos} />
+          }}
+        />
+        <Route
+          exact
+          path="/My_Quotes"
+          render={props => {
+            return <MyQuotes  quotes={this.state.quotes}
+                              appViewsGetMyQuotes={this.getMyQuotes}/>
+
           }}
         />
         {/* <Route
