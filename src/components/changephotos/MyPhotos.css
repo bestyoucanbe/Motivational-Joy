@@ -1,5 +1,10 @@
+.photo-page-container {
+  display: flex;
+}
+
 .photo-container {
   display: flex;
+  flex-direction: wrap;
   justify-content: space-evenly;
 }
 

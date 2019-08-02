@@ -40,7 +40,7 @@ findCurrentUser = evt => {
               console.log("yup")
               sessionStorage.setItem("id", data[0].id)
               this.props.setAuthState()
-              this.props.history.push("/")
+              this.props.history.push("/My_Favorites")
             } else{
               window.alert("Please use a valid login or register")
             }
