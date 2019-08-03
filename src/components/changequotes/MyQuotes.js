@@ -76,7 +76,7 @@ export default class MyQuotes extends Component {
                   className="btn btn-primary"
                   onClick={() => {
                     this.props.history.push(
-                      `/My_Quotes/${this.props.quote.id}/edit`
+                      `/My_Quotes/${eachquote.id}/edit`
                     )
                   }}
                 >

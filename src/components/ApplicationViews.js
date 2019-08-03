@@ -9,6 +9,7 @@ import QuoteManager from "../modules/QuoteManager"
 import IdeaManager from "../modules/IdeaManager"
 import ActivityManager from "../modules/ActivityManager"
 import EventbriteManager from "../modules/EventbriteManager"
+import QuoteEditForm from './changequotes/QuoteEditForm'
 import Login from "./Login"
 
 class ApplicationViews extends Component {
@@ -124,6 +125,7 @@ class ApplicationViews extends Component {
           render={props => {
             return (
               <MyQuotes
+                {...props}
                 quotes={this.state.quotes}
                 appViewsGetMyQuotes={this.getMyQuotes}
               />
