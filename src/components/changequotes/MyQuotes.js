@@ -24,7 +24,8 @@ export default class MyQuotes extends Component {
     const newQuote = {
       userid: this.currentUserId,
       quote: this.state.quote,
-      author: this.state.author
+      author: this.state.author,
+      myrank: 10
     }
 
     QuoteManager.post(newQuote).then(() => {
@@ -75,9 +76,7 @@ export default class MyQuotes extends Component {
                   href="#"
                   className="btn btn-primary"
                   onClick={() => {
-                    this.props.history.push(
-                      `/My_Quotes/${eachquote.id}/edit`
-                    )
+                    this.props.history.push(`/My_Quotes/${eachquote.id}/edit`)
                   }}
                 >
                   EDIT

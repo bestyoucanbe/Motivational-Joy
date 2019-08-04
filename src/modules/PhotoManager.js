@@ -8,7 +8,7 @@ export default {
     return fetch(`${remoteURL}/photos`).then(e => e.json())
   },
   getSpecificInfo(incomingstring) {
-    return fetch(`${remoteURL}/${incomingstring}`).then(e => e.json())
+    return fetch(`${remoteURL}/photos${incomingstring}`).then(e => e.json())
   },
   post(newPhoto) {
     return fetch(`${remoteURL}/photos`, {
@@ -17,6 +17,15 @@ export default {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(newPhoto)
+    }).then(data => data.json())
+  },
+  put(putPhoto) {
+    return fetch(`${remoteURL}/photos/${putPhoto.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(putPhoto)
     }).then(data => data.json())
   }
 }

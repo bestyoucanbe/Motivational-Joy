@@ -9,7 +9,7 @@ import QuoteManager from "../modules/QuoteManager"
 import IdeaManager from "../modules/IdeaManager"
 import ActivityManager from "../modules/ActivityManager"
 import EventbriteManager from "../modules/EventbriteManager"
-import QuoteEditForm from './changequotes/QuoteEditForm'
+import QuoteEditForm from "./changequotes/QuoteEditForm"
 import Login from "./Login"
 
 class ApplicationViews extends Component {
@@ -21,19 +21,20 @@ class ApplicationViews extends Component {
     events: []
   }
 
-  getMyPhotos = () => {
-    PhotoManager.getSpecificInfo(
-      `photos?userid=${+sessionStorage.getItem("id")}`
-    ).then(allPhotos => {
+  //Get only my favorite photos
+  //`photos?userid=${+sessionStorage.getItem("id")}&isfavorite=true`
+  getMyPhotos = queryparams => {
+    PhotoManager.getSpecificInfo(queryparams).then(allPhotos => {
       this.setState({
         photos: allPhotos
       })
     })
   }
 
+  //Get only my favorite quotes
   getMyQuotes = () => {
     QuoteManager.getSpecificInfo(
-      `quotes?userid=${parseInt(sessionStorage.getItem("id"))}`
+      `quotes?userid=${parseInt(sessionStorage.getItem("id"))}&isfavorite=true`
     ).then(allQuotes => {
       this.setState({
         quotes: allQuotes
@@ -41,20 +42,20 @@ class ApplicationViews extends Component {
     })
   }
 
-  updateQuote = (editedQuoteObject) => {
+  updateQuote = editedQuoteObject => {
     return QuoteManager.put(editedQuoteObject)
-    .then(() => QuoteManager.getAll())
-    .then(allquotes => {
-      this.setState({
-        quotes: allquotes
+      .then(() => QuoteManager.getAll())
+      .then(allquotes => {
+        this.setState({
+          quotes: allquotes
+        })
       })
-    })
   }
-
+  //FIXME:  BIG FIX-->Fetch all items on individual pages...not here in Application views!
   componentDidMount() {
     //Each manager section contains the API calls to the database
 
-    this.getMyPhotos() //Calls the function to get photos for the active user from the database.
+    this.getMyPhotos(`?userid=${+sessionStorage.getItem("id")}&isfavorite=true`) //Calls the function to get photos for the active user from the database.
 
     this.getMyQuotes() //Calls the function to get quotes for the active user from the database.
 
@@ -102,6 +103,7 @@ class ApplicationViews extends Component {
                 quotes={this.state.quotes}
                 ideas={this.state.ideas}
                 activities={this.state.activities}
+                getMyPhotos={this.getMyPhotos}
               />
             )
           }}
@@ -135,12 +137,7 @@ class ApplicationViews extends Component {
         <Route
           path="/My_Quotes/:quoteId(\d+)/edit"
           render={props => {
-            return (
-              <QuoteEditForm
-                {...props}
-                updateQuote={this.updateQuote}
-              />
-            )
+            return <QuoteEditForm {...props} updateQuote={this.updateQuote} />
           }}
         />
         {/* <Route

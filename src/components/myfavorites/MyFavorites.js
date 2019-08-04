@@ -1,10 +1,23 @@
 import React, { Component } from "react"
 import "./MyFavorites.css"
+import PhotoManager from "../../modules/PhotoManager"
 
 export default class MyFavorites extends Component {
+  state = {
+    isfavorite: true
+  }
   componentDidMount() {
     console.log(this.props)
   }
+
+  onClickPhotoHandler = photoComingIn => {
+    const copyPhoto = { ...photoComingIn }
+    // const copyPhoto1 = {}
+    // copyPhoto1.isfavorite = !photoComingIn.isfavorite
+    copyPhoto.isfavorite = !copyPhoto.isfavorite
+    PhotoManager.put(copyPhoto)
+  }
+
   render() {
     return (
       <div>
@@ -20,8 +33,12 @@ export default class MyFavorites extends Component {
                 alt="Card image cap"
               />
               <div className="card-body">
-                <a href="#" className="btn btn-primary">
-                  **CHANGE THIS**
+                <a
+                  href="#"
+                  onClick={() => this.onClickPhotoHandler(eachphoto)}
+                  className="btn btn-danger"
+                >
+                  Remove
                 </a>
               </div>
             </div>
@@ -29,11 +46,11 @@ export default class MyFavorites extends Component {
           {this.props.quotes.map(eachquote => (
             <div key={eachquote.id} className="card text-white bg-danger mb-3">
               <div className="card-body">
-                <h5 class="card-title">Quote</h5>
+                <h5 className="card-title">Quote</h5>
                 <p>{eachquote.quote}</p>
                 <p>{eachquote.author}</p>
-                <a href="#" className="btn btn-primary">
-                  **CHANGE THIS**
+                <a href="#" className="btn btn-warning">
+                  Remove
                 </a>
               </div>
             </div>
@@ -41,10 +58,10 @@ export default class MyFavorites extends Component {
           {this.props.ideas.map(eachidea => (
             <div key={eachidea.id} className="card text-white bg-success mb-3">
               <div className="card-body">
-                <h5 class="card-title">Idea</h5>
+                <h5 className="card-title">Idea</h5>
                 <p>{eachidea.idea}</p>
-                <a href="#" className="btn btn-primary">
-                  **CHANGE THIS**
+                <a href="#" className="btn btn-danger">
+                  Remove
                 </a>
               </div>
             </div>
@@ -55,10 +72,10 @@ export default class MyFavorites extends Component {
               className="card text-white bg-primary mb-3"
             >
               <div className="card-body">
-                <h5 class="card-title">Activity</h5>
+                <h5 className="card-title">Activity</h5>
                 <p>{eachactivity.user_description}</p>
-                <a href="#" className="btn btn-secondary">
-                  **CHANGE THIS**
+                <a href="#" className="btn btn-danger">
+                  Remove
                 </a>
               </div>
             </div>

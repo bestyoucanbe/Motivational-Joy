@@ -1,11 +1,16 @@
 import React, { Component } from "react"
+import { Button, ButtonGroup } from "reactstrap"
 import QuoteManager from "../../modules/QuoteManager"
 export default class QuoteEditForm extends Component {
   // Set initial state
   state = {
     quote: "",
-    author: ""
+    author: "",
+    isfavorite: true,
+    radioSelected: true
   }
+
+  currentUserId = parseInt(sessionStorage.getItem("id"))
 
   handleOnChangeQuote = event => {
     this.setState({ quote: event.target.value })
@@ -13,6 +18,10 @@ export default class QuoteEditForm extends Component {
 
   handleOnChangeAuthor = event => {
     this.setState({ author: event.target.value })
+  }
+
+  onRadioBtnClick(radioSelected) {
+    this.setState({ isfavorite: radioSelected })
   }
 
   updateExistingQuote = evt => {
@@ -23,7 +32,9 @@ export default class QuoteEditForm extends Component {
       const editedQuote = {
         id: parseInt(this.props.match.params.quoteId),
         quote: this.state.quote,
-        author: this.state.author
+        author: this.state.author,
+        isfavorite: this.state.isfavorite,
+        userid: this.currentUserId
       }
 
       this.props
@@ -64,6 +75,25 @@ export default class QuoteEditForm extends Component {
               id="author"
               value={this.state.author}
             />
+          </div>
+          <div>
+            <h5>Favorite?</h5>
+            <ButtonGroup className="mb-3">
+              <Button
+                color="success"
+                onClick={() => this.onRadioBtnClick(true)}
+                active={this.state.radioSelected === true}
+              >
+                Yes
+              </Button>
+              <Button
+                color="danger"
+                onClick={() => this.onRadioBtnClick(false)}
+                active={this.state.radioSelected === false}
+              >
+                No
+              </Button>
+            </ButtonGroup>
           </div>
           <button
             type="submit"
