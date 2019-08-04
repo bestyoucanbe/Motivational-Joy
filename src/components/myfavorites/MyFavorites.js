@@ -3,19 +3,22 @@ import "./MyFavorites.css"
 import PhotoManager from "../../modules/PhotoManager"
 
 export default class MyFavorites extends Component {
+  currentUserId = parseInt(sessionStorage.getItem("id")) //Get the current userid and convert the string to a number.
+
   state = {
-    isfavorite: true
+    photos: []
   }
   componentDidMount() {
-    console.log(this.props)
+    console.log("the props in favorites", this.props)
+    this.props.getMyFavoritePhotos()
   }
 
   onClickPhotoHandler = photoComingIn => {
     const copyPhoto = { ...photoComingIn }
     // const copyPhoto1 = {}
     // copyPhoto1.isfavorite = !photoComingIn.isfavorite
-    copyPhoto.isfavorite = !copyPhoto.isfavorite
-    PhotoManager.put(copyPhoto)
+    copyPhoto.isfavorite = !copyPhoto.isfavorite //Change the value of isfavorite field
+    PhotoManager.put(copyPhoto).then(() => this.props.getMyFavoritePhotos())
   }
 
   render() {
@@ -43,7 +46,7 @@ export default class MyFavorites extends Component {
               </div>
             </div>
           ))}
-          {this.props.quotes.map(eachquote => (
+          {/* {this.props.quotes.map(eachquote => (
             <div key={eachquote.id} className="card text-white bg-danger mb-3">
               <div className="card-body">
                 <h5 className="card-title">Quote</h5>
@@ -79,7 +82,7 @@ export default class MyFavorites extends Component {
                 </a>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     )

@@ -21,7 +21,7 @@
       "id": 1,
       "userid": 1,
       "url": "https://lh3.googleusercontent.com/Hzg7CIzyi4KkOAS95p2WpysYOUwiWBuGSK97VlpBoMxTJSUZD6T_27a0v8ofk6jVxMVK-nd35ahlPj5ZD0n24j0QJLzpjZ8C-HmfBkIJ-jVt19_excfeWtdn8Qm2TgYwulQASjFD5NfPmz1ctcGW46nNuk96qyjPegcUZQA3xGyixd1GW1eu_4tfbgPYBeKh2OIQWbiKoECBpq6oSPEwe3QtyfNsyJdIJnOEQ1c41_oepeaeiokIOpCvoVraApBqn9fBehDwJySZVSAyKfGaCtCzXJLsZJnZ_1qZaqlDcjrUdCMXf-Le9UVufAWoUHEpOmk6St4sf2xHSyIlLqBtwglE-U9CQvqChz9Grck71PFgCQN4iZ3nX563d_ZbOClTKA91vNW_NHbEn7oYT4w8mLKHOm19_lI2W9m26i9cHIEDQQhEk04qb_b5xCfhLAaEA-2t_eRJIYkLHavIbF05v4A43HJv1kPIZ2CbSSUL9DrfoHw-fd7C4FKLaWwpQP03fO0QB988drNCSDSn57oattDRPme4eetjeK7t7sQrOMqqHSVGenHfw6iaAZneoMmZ-8IaKCjmbsTw4an5LWrGcBGef7AdLDgkPHoQBxys9qf7JflJlW-3TCdftfzI18qznQJCnPjSOaWhiNpocyNht9ti6jStxu8N=w724-h903-no",
-      "isfavorite": false
+      "isfavorite": true
     },
     {
       "id": 2,
@@ -123,7 +123,7 @@
       "id": 11,
       "quote": "Dom said \"Give me a beer!\" 3",
       "author": "Dom 3",
-      "isfavorite": false,
+      "isfavorite": true,
       "userid": 1
     },
     {
