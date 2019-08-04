@@ -3,30 +3,30 @@ import React, { Component } from "react"
 import { withRouter } from "react-router"
 import Login from "./Login"
 import MyFavorites from "./myfavorites/MyFavorites"
-// import MyPhotos from "./changephotos/MyPhotos"
 import PhotoManager from "../modules/PhotoManager"
+import QuoteManager from "../modules/QuoteManager"
+import IdeaManager from "../modules/IdeaManager"
+import ActivityManager from "../modules/ActivityManager"
+// import MyPhotos from "./changephotos/MyPhotos"
 // import MyQuotes from "./changequotes/MyQuotes"
-// import QuoteManager from "../modules/QuoteManager"
-// import IdeaManager from "../modules/IdeaManager"
-// import ActivityManager from "../modules/ActivityManager"
 // import EventbriteManager from "../modules/EventbriteManager"
 // import QuoteEditForm from "./changequotes/QuoteEditForm"
 
 class ApplicationViews extends Component {
   state = {
-    photos: []
-    // quotes: [],
-    // ideas: [],
-    // activities: [],
+    photos: [],
+    quotes: [],
+    ideas: [],
+    activities: []
     // events: []
   }
 
   currentUserId = parseInt(sessionStorage.getItem("id")) //Get the current userid and convert the string to a number.
+
   //Get only my favorite photos
-  //`photos?userid=${+sessionStorage.getItem("id")}&isfavorite=true`
   getMyFavoritePhotos = () => {
     PhotoManager.getSpecificInfo(
-      `/photos?userid=${this.currentUserId}&isfavorite=true`
+      `photos?userid=${this.currentUserId}&isfavorite=true`
     ).then(allPhotos => {
       this.setState({
         photos: allPhotos
@@ -35,15 +35,36 @@ class ApplicationViews extends Component {
   }
 
   //Get only my favorite quotes
-  // getMyQuotes = () => {
-  //   QuoteManager.getSpecificInfo(
-  //     `quotes?userid=${parseInt(sessionStorage.getItem("id"))}&isfavorite=true`
-  //   ).then(allQuotes => {
-  //     this.setState({
-  //       quotes: allQuotes
-  //     })
-  //   })
-  // }
+  getMyFavoriteQuotes = () => {
+    QuoteManager.getSpecificInfo(
+      `quotes?userid=${this.currentUserId}&isfavorite=true`
+    ).then(allQuotes => {
+      this.setState({
+        quotes: allQuotes
+      })
+    })
+  }
+
+  //Get only my favorite ideas
+  getMyFavoriteIdeas = () => {
+    IdeaManager.getSpecificInfo(
+      `ideas?userid=${this.currentUserId}&isfavorite=true`
+    ).then(allIdeas => {
+      this.setState({
+        ideas: allIdeas
+      })
+    })
+  }
+
+  getMyFavoriteActivities = () => {
+    ActivityManager.getSpecificInfo(
+      `activities?userid=${this.currentUserId}&isfavorite=true`
+    ).then(allActivities => {
+      this.setState({
+        activities: allActivities
+      })
+    })
+  }
 
   // updateQuote = editedQuoteObject => {
   //   return QuoteManager.put(editedQuoteObject)
@@ -105,10 +126,13 @@ class ApplicationViews extends Component {
             return (
               <MyFavorites
                 photos={this.state.photos}
-                // quotes={this.state.quotes}
-                // ideas={this.state.ideas}
-                // activities={this.state.activities}
+                quotes={this.state.quotes}
+                ideas={this.state.ideas}
+                activities={this.state.activities}
                 getMyFavoritePhotos={this.getMyFavoritePhotos}
+                getMyFavoriteQuotes={this.getMyFavoriteQuotes}
+                getMyFavoriteIdeas={this.getMyFavoriteIdeas}
+                getMyFavoriteActivities={this.getMyFavoriteActivities}
               />
             )
           }}

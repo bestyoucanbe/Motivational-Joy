@@ -8,7 +8,7 @@ export default {
     return fetch(`${remoteURL}/photos`).then(e => e.json())
   },
   getSpecificInfo(incomingstring) {
-    return fetch(`${remoteURL}${incomingstring}`).then(e => e.json())
+    return fetch(`${remoteURL}/${incomingstring}`).then(e => e.json())
   },
   post(newPhoto) {
     return fetch(`${remoteURL}/photos`, {
