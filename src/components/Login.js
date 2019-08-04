@@ -40,7 +40,7 @@ findCurrentUser = evt => {
               console.log("yup")
               sessionStorage.setItem("id", data[0].id)
               this.props.setAuthState()
-              this.props.history.push("/")
+              this.props.history.push("/My_Favorites")
             } else{
               window.alert("Please use a valid login or register")
             }
@@ -61,70 +61,3 @@ findCurrentUser = evt => {
   }
 }
 export default  withRouter (Login)
-//TODO:  Delete this later---
-
-// import React, { Component } from 'react'
-// import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
-// import logo from './logo.png'
-// import API from "../../module/API"
-// import { withRouter} from "react-router"
-// import Register from './Registration'
-// class Login extends Component {
-
-//   state = {
-//     username: "",
-//     password: "",
-//   }
-
-//   //this handles the inputs field changes and pushes into the state
-//   handleFieldChange = (evt) => {
-//     const stateToChange = {}
-//     stateToChange[evt.target.id] = evt.target.value
-//     this.setState(stateToChange)
-//   }
-//   //this will need to be moved to applicationviews and passed down as a child
-//   getUser = () =>
-//     API.getAll("users", `q=${this.state.username}`)
-
-
-//   //this generates the new user and pushes to the database
-//   //FIXME: NEED TO ADD CODE FOR VERIFICATION
-
-
-
-
-//   render() {
-//     return (
-//       <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-//         <Grid.Column style={{ maxWidth: 450 }}>
-//           <Header as='h2' color='black' textAlign='center'>
-//             <Image src={logo} /> Log-in to your account
-//       </Header>
-//           <Form size='large'>
-//             <Segment stacked>
-//               <Form.Input fluid icon='user' iconPosition='left' placeholder='Username' id="username" onChange={this.handleFieldChange} />
-//               <Form.Input
-//                 fluid
-//                 icon='lock'
-//                 iconPosition='left'
-//                 placeholder='Password'
-//                 type='password'
-//                 id="password"
-//                 onChange={this.handleFieldChange}
-//               />
-
-//               <Button primary fluid size='large' onClick={this.findCurrentUser}>
-//                 Login
-//           </Button>
-//             </Segment>
-//           </Form>
-//           <Message>
-//             New to us?   <Register />
-//           </Message>
-//         </Grid.Column>
-//       </Grid>
-//     )
-//   }
-// }
-
-

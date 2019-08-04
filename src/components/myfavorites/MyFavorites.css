@@ -1,23 +1,13 @@
-.photo-container {
+.allitems-container {
   display: flex;
-  justify-content: space-evenly;
-}
-
-.quote-container {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.idea-container {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.activity-container {
-  display: flex;
+  flex-flow: row wrap;
   justify-content: space-evenly;
 }
 
 .card {
   width: 10rem;
+}
+
+.heading {
+  text-align: center;
 }

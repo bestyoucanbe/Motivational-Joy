@@ -1,155 +1,233 @@
-{ "users": [
-  { "id": 1,
-    "username": "Joy",
-    "password": "Joy"
-  },
-  { "id": 2,
-    "username": "Joe",
-    "password": "Joe"
-  },
-  { "id": 3,
-    "username": "Ben",
-    "password": "Ben"
-  }
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Joy",
+      "password": "Joy"
+    },
+    {
+      "id": 2,
+      "username": "Joe",
+      "password": "Joe"
+    },
+    {
+      "id": 3,
+      "username": "Ben",
+      "password": "Ben"
+    }
   ],
   "photos": [
     {
       "id": 1,
       "userid": 1,
-      "url": "https://lh3.googleusercontent.com/Hzg7CIzyi4KkOAS95p2WpysYOUwiWBuGSK97VlpBoMxTJSUZD6T_27a0v8ofk6jVxMVK-nd35ahlPj5ZD0n24j0QJLzpjZ8C-HmfBkIJ-jVt19_excfeWtdn8Qm2TgYwulQASjFD5NfPmz1ctcGW46nNuk96qyjPegcUZQA3xGyixd1GW1eu_4tfbgPYBeKh2OIQWbiKoECBpq6oSPEwe3QtyfNsyJdIJnOEQ1c41_oepeaeiokIOpCvoVraApBqn9fBehDwJySZVSAyKfGaCtCzXJLsZJnZ_1qZaqlDcjrUdCMXf-Le9UVufAWoUHEpOmk6St4sf2xHSyIlLqBtwglE-U9CQvqChz9Grck71PFgCQN4iZ3nX563d_ZbOClTKA91vNW_NHbEn7oYT4w8mLKHOm19_lI2W9m26i9cHIEDQQhEk04qb_b5xCfhLAaEA-2t_eRJIYkLHavIbF05v4A43HJv1kPIZ2CbSSUL9DrfoHw-fd7C4FKLaWwpQP03fO0QB988drNCSDSn57oattDRPme4eetjeK7t7sQrOMqqHSVGenHfw6iaAZneoMmZ-8IaKCjmbsTw4an5LWrGcBGef7AdLDgkPHoQBxys9qf7JflJlW-3TCdftfzI18qznQJCnPjSOaWhiNpocyNht9ti6jStxu8N=w724-h903-no"
+      "url": "https://lh3.googleusercontent.com/Hzg7CIzyi4KkOAS95p2WpysYOUwiWBuGSK97VlpBoMxTJSUZD6T_27a0v8ofk6jVxMVK-nd35ahlPj5ZD0n24j0QJLzpjZ8C-HmfBkIJ-jVt19_excfeWtdn8Qm2TgYwulQASjFD5NfPmz1ctcGW46nNuk96qyjPegcUZQA3xGyixd1GW1eu_4tfbgPYBeKh2OIQWbiKoECBpq6oSPEwe3QtyfNsyJdIJnOEQ1c41_oepeaeiokIOpCvoVraApBqn9fBehDwJySZVSAyKfGaCtCzXJLsZJnZ_1qZaqlDcjrUdCMXf-Le9UVufAWoUHEpOmk6St4sf2xHSyIlLqBtwglE-U9CQvqChz9Grck71PFgCQN4iZ3nX563d_ZbOClTKA91vNW_NHbEn7oYT4w8mLKHOm19_lI2W9m26i9cHIEDQQhEk04qb_b5xCfhLAaEA-2t_eRJIYkLHavIbF05v4A43HJv1kPIZ2CbSSUL9DrfoHw-fd7C4FKLaWwpQP03fO0QB988drNCSDSn57oattDRPme4eetjeK7t7sQrOMqqHSVGenHfw6iaAZneoMmZ-8IaKCjmbsTw4an5LWrGcBGef7AdLDgkPHoQBxys9qf7JflJlW-3TCdftfzI18qznQJCnPjSOaWhiNpocyNht9ti6jStxu8N=w724-h903-no",
+      "isfavorite": true
     },
     {
       "id": 2,
       "userid": 1,
-      "url": "https://lh3.googleusercontent.com/BX_yn96C4Du2mthwaiHG1hDXjMHnmIcUH0rW0IvJkVDQ-vkfF629tPr-OVe50g7Ra4fCz1Qm0-aTEOC08M-l5WaH5G1hzyP7-4aWib2-lMR5cT9jISOMi888Agj1Rl4O1TvZh_j_M3E6r9roRX5_emi1TEcYpRSkvev6Y4HlorCJWYHBDQXy8btpcaU8BNB3NISSoRckW1aIqwg6NYKev6Iqe2ykVDK8aI2KXMyb_lueEXxfOES-NqMT7dGhI9DRRB4bHksBIscpvBZISPyzNRqedFNdU70QQCtx4ERMyMPuBHX8O2iwcbrL7tjMtw-A1LR-Vy1kZJL2LVhfHTmDVTHp64PxWOC4oNGVa3pPcoiaZIjkzqK4TbmVmcV8ZAe1FD7SGLW8ZktZzMKMz3qVw362vhIKr1jm8WUgiRb8Uji6ygScsAsw7x_B9NiHylwyRC0uVnTlpeQIadQrtTMRrTQ_IrYr0HB4pGWWGr8H7TLvXnkdz2Ivv29l20fHtGrfaF1fhPbj__RlLMiJgieEPHAI6iDgiQR12gP0yKme6RscGMsLpWDvKEZ9X4z4nEqZVJkUAwA6SANyWfgCvk0F84zt-7rlz0iLN3ljLBGwoJSiyObwVepAk35ebojJWbqXdtcGsHKEmRfa8DPb_Lg_so0E3qoNZWoi=w723-h903-no"
+      "url": "https://lh3.googleusercontent.com/BX_yn96C4Du2mthwaiHG1hDXjMHnmIcUH0rW0IvJkVDQ-vkfF629tPr-OVe50g7Ra4fCz1Qm0-aTEOC08M-l5WaH5G1hzyP7-4aWib2-lMR5cT9jISOMi888Agj1Rl4O1TvZh_j_M3E6r9roRX5_emi1TEcYpRSkvev6Y4HlorCJWYHBDQXy8btpcaU8BNB3NISSoRckW1aIqwg6NYKev6Iqe2ykVDK8aI2KXMyb_lueEXxfOES-NqMT7dGhI9DRRB4bHksBIscpvBZISPyzNRqedFNdU70QQCtx4ERMyMPuBHX8O2iwcbrL7tjMtw-A1LR-Vy1kZJL2LVhfHTmDVTHp64PxWOC4oNGVa3pPcoiaZIjkzqK4TbmVmcV8ZAe1FD7SGLW8ZktZzMKMz3qVw362vhIKr1jm8WUgiRb8Uji6ygScsAsw7x_B9NiHylwyRC0uVnTlpeQIadQrtTMRrTQ_IrYr0HB4pGWWGr8H7TLvXnkdz2Ivv29l20fHtGrfaF1fhPbj__RlLMiJgieEPHAI6iDgiQR12gP0yKme6RscGMsLpWDvKEZ9X4z4nEqZVJkUAwA6SANyWfgCvk0F84zt-7rlz0iLN3ljLBGwoJSiyObwVepAk35ebojJWbqXdtcGsHKEmRfa8DPb_Lg_so0E3qoNZWoi=w723-h903-no",
+      "isfavorite": true
     },
     {
       "id": 3,
       "userid": 2,
-      "url": "https://lh3.googleusercontent.com/jW2SZL_srCaep-PGVSX1Dj4D-T_uE3LsdrTWjwvvdPKyYnTiSM0KIsJlXi5JQPVd3bwlHrrbjdE9vN33zGskpKex1JFskjM7fulLYOHKMQEMQpGjIumCHNWHDo5Fbixrxvs9WeibfhUmMEzs5wystQnvTFeuV55NzCCQq8eVOL7RnnP2JPulW2mWU-9eKgQQ4C55yZESjeKBxlwBy-AYxlHqMLUkKImrJNKsnPebFJONETgEzc1lEcPcX6e2Nxz7thmaa2NKNp6HjSMr1tuDiYbQ1ExO4LVvHl6xHpBbn-MuEVFu8nVFfkJcxmUGmmwykx1mrA-9CdiAykf2zPZnmNTc9hKJ8BS3iS6PMZPX6V1-p5f__bZlUkx0NKNi1FBOe1aPbPJMouUwRBbyYOrU6bcpfbQqDqFJcPVMQpoEzWwWJ5c22M0mmgMromfzPOYGsNmrB7ZNupMsRcUezZ1tnUKUJXPiAf43gGJgZtCEEcRWN6z2fli-GU345vfEtsJxlhH6QQCbWS1IfpHLk_zQ9XsbHadXLnQwaDLqgZQ6zM6s3WyI3sUQ795tR2vBnHQjO3xC_rgaZVDcSIK6CmXU0FGDb-ohs3vHp036CrAAsbkOYIFKH6GJ71cX82LA62taNr1Jhd6p4fAvg5si3jH6DjdVRMgKwzsI=w758-h903-no"
+      "url": "https://lh3.googleusercontent.com/jW2SZL_srCaep-PGVSX1Dj4D-T_uE3LsdrTWjwvvdPKyYnTiSM0KIsJlXi5JQPVd3bwlHrrbjdE9vN33zGskpKex1JFskjM7fulLYOHKMQEMQpGjIumCHNWHDo5Fbixrxvs9WeibfhUmMEzs5wystQnvTFeuV55NzCCQq8eVOL7RnnP2JPulW2mWU-9eKgQQ4C55yZESjeKBxlwBy-AYxlHqMLUkKImrJNKsnPebFJONETgEzc1lEcPcX6e2Nxz7thmaa2NKNp6HjSMr1tuDiYbQ1ExO4LVvHl6xHpBbn-MuEVFu8nVFfkJcxmUGmmwykx1mrA-9CdiAykf2zPZnmNTc9hKJ8BS3iS6PMZPX6V1-p5f__bZlUkx0NKNi1FBOe1aPbPJMouUwRBbyYOrU6bcpfbQqDqFJcPVMQpoEzWwWJ5c22M0mmgMromfzPOYGsNmrB7ZNupMsRcUezZ1tnUKUJXPiAf43gGJgZtCEEcRWN6z2fli-GU345vfEtsJxlhH6QQCbWS1IfpHLk_zQ9XsbHadXLnQwaDLqgZQ6zM6s3WyI3sUQ795tR2vBnHQjO3xC_rgaZVDcSIK6CmXU0FGDb-ohs3vHp036CrAAsbkOYIFKH6GJ71cX82LA62taNr1Jhd6p4fAvg5si3jH6DjdVRMgKwzsI=w758-h903-no",
+      "isfavorite": true
     },
     {
       "id": 4,
       "userid": 2,
-      "url": "https://lh3.googleusercontent.com/73bake7HTbMU4RZQQ8dMuENaOGsYoIi341mVoY9ZDhSZibBtWcDU5BTPs0b4w6GXxtUR8yRVLIb997aoQ9fbHMB_yt7KC0yP2FJD09hv3mbQ5P85G8riHpZX2QP1h2css4jpfNeqN6tzmN541xRJEaoye-DRis8jhUsRAm2AB5ep5Z5kyodvfBdv6GLtu60dapN49VC6f5YW8B8ZlD_TAo63JjvuQQEJFpdIbfoqS3X0HglU9TxF_a4_KPl6J0PoZ9dwzBaQWKhyhl1lnBFg3fpGdnramNCoMEW-8B9GvuEugOGgiIcKVV57ffu9rNw6qbA7aMgGNZu2AC0g0jA49plbVJP1dnT9P3k6xtdmxtvSTuD8Gvscm7Ql5uVf2xD9q2Seg4upex87v8nn-rIZQpX1_4eb0TPNNaCdMpjOtOknLzuPdsVCU6G0tthNSHsCwV6_0uUi1y5NOwpC4edFkp0tDdbaxGWDpSrrcAwTpUysVmvVYDAev54322jgfU4SUf_vXxbcCtDaapkNsH-3UUlBB2kTvSBQH1WS9KxJvT2sjCuW-jbdHKtySOn28nS4btjRwKtNZAx1TdJqGCZZDg0M-rq_7BSmEjOPgdAol5OmcgM_DUVaEj9ncGq86CJGiubix3fE-aZxD2X8au3nMQP7QsebBm62=w1354-h903-no"
+      "url": "https://lh3.googleusercontent.com/73bake7HTbMU4RZQQ8dMuENaOGsYoIi341mVoY9ZDhSZibBtWcDU5BTPs0b4w6GXxtUR8yRVLIb997aoQ9fbHMB_yt7KC0yP2FJD09hv3mbQ5P85G8riHpZX2QP1h2css4jpfNeqN6tzmN541xRJEaoye-DRis8jhUsRAm2AB5ep5Z5kyodvfBdv6GLtu60dapN49VC6f5YW8B8ZlD_TAo63JjvuQQEJFpdIbfoqS3X0HglU9TxF_a4_KPl6J0PoZ9dwzBaQWKhyhl1lnBFg3fpGdnramNCoMEW-8B9GvuEugOGgiIcKVV57ffu9rNw6qbA7aMgGNZu2AC0g0jA49plbVJP1dnT9P3k6xtdmxtvSTuD8Gvscm7Ql5uVf2xD9q2Seg4upex87v8nn-rIZQpX1_4eb0TPNNaCdMpjOtOknLzuPdsVCU6G0tthNSHsCwV6_0uUi1y5NOwpC4edFkp0tDdbaxGWDpSrrcAwTpUysVmvVYDAev54322jgfU4SUf_vXxbcCtDaapkNsH-3UUlBB2kTvSBQH1WS9KxJvT2sjCuW-jbdHKtySOn28nS4btjRwKtNZAx1TdJqGCZZDg0M-rq_7BSmEjOPgdAol5OmcgM_DUVaEj9ncGq86CJGiubix3fE-aZxD2X8au3nMQP7QsebBm62=w1354-h903-no",
+      "isfavorite": true
     },
     {
       "id": 5,
       "userid": 3,
-      "url": "https://lh3.googleusercontent.com/5_ALubD20VTjFrdA_ZM76ztwAY2iesm-mWqhutUPLNJUtdRNLWAmqy5OQWnhNGsP6pjfpEuv46eq1IrXDzEB9IlcKSe5QhtWx_aJC-c0tzwogHdHCBXSO3FcOkWAQV1GMTMdLLMpgkxao-wkDIfn9DYQsFP0_CeGl9IhCGYqb3pNNZ2kervTbp4nKBERoPtajGnx6RD31D8r3Nl06J7RJfe0FIYxT6bI7h3LKw4gGotbhs6AHJk6NCPeIuSHviQwv1DWt5RMAALTPpcCmAEc30_q2TmLHjIHVoK2tZkY_ZIpXI8gQg6QKQ0k8EMD4OFlXOse_nlIe5IOzrPduLlrhHmZ6C2gMikJQhPGtaafHFkBoImOcOPzBOwIUVechX-XkYEhu2rTRRdv53FmoaUV3hjjfEdHfZGaeAMzAN3HsH_4ZykZ8JJdNbpxXag95OONtqzw6RmmAm_7lFS4phVpUfY50oXkL_U53UZHlwcR5RnGjwRdzgstMKsfNLqD6U4M7Bt3oGwEpQKdeMzJ9x8kgz0WBTQx7NW1GIIrf1bKZ0bq9CsfYSCeaFNle0Vgcw_dBDeibHEdWmav5ZSPoZxzDuFg9K2a6aoCD1rZId8XChaX0YEop3kEzOEI_dvdWusaDpGiyrom3BwzkoeQHQ3wy5DsB7lGTcht=w905-h903-no"
+      "url": "https://lh3.googleusercontent.com/5_ALubD20VTjFrdA_ZM76ztwAY2iesm-mWqhutUPLNJUtdRNLWAmqy5OQWnhNGsP6pjfpEuv46eq1IrXDzEB9IlcKSe5QhtWx_aJC-c0tzwogHdHCBXSO3FcOkWAQV1GMTMdLLMpgkxao-wkDIfn9DYQsFP0_CeGl9IhCGYqb3pNNZ2kervTbp4nKBERoPtajGnx6RD31D8r3Nl06J7RJfe0FIYxT6bI7h3LKw4gGotbhs6AHJk6NCPeIuSHviQwv1DWt5RMAALTPpcCmAEc30_q2TmLHjIHVoK2tZkY_ZIpXI8gQg6QKQ0k8EMD4OFlXOse_nlIe5IOzrPduLlrhHmZ6C2gMikJQhPGtaafHFkBoImOcOPzBOwIUVechX-XkYEhu2rTRRdv53FmoaUV3hjjfEdHfZGaeAMzAN3HsH_4ZykZ8JJdNbpxXag95OONtqzw6RmmAm_7lFS4phVpUfY50oXkL_U53UZHlwcR5RnGjwRdzgstMKsfNLqD6U4M7Bt3oGwEpQKdeMzJ9x8kgz0WBTQx7NW1GIIrf1bKZ0bq9CsfYSCeaFNle0Vgcw_dBDeibHEdWmav5ZSPoZxzDuFg9K2a6aoCD1rZId8XChaX0YEop3kEzOEI_dvdWusaDpGiyrom3BwzkoeQHQ3wy5DsB7lGTcht=w905-h903-no",
+      "isfavorite": true
     },
     {
       "id": 6,
       "userid": 3,
-      "url": "https://lh3.googleusercontent.com/VC9GMkBxoZ6-KGddzMeSwVYRtPMiNAPXCpo3iwlbGyxdVaH7bgIp63uZHNlFE52H95fD9VDJYRpQ-HZKZsSPi4out4ZEjXjoPaIBs559Umfh8QEuF-l6NSQtvSuinMooFJA4KIT08n4hVGw_l9oVswd7nqPG9MoGDBUfpheO_76dDGHg6syWGwm51uEPZ7y7eu0Dr2yGdFEIKEWsODsNmG7U0eFdsemEygIpWhmG-0lesdsfNBgbsnuLVasp_Onpg52YkpQJVaZyciv87cXQq2Y4-6C0j09ju47-SZgEQXViS5Nk9X9m2_hm8dLQSwK_2fWG3_Wyb07p1Pqv_GJrmaJK5xrnwvinHWWlKYRkq4rqr69cY05Mr89h5YDIGY40T8DH6tV-2zTzvm2iftu2hrdoTlvD-XzkIZ7VoK3uzXpth2ESbVHz_AKxvmasD5SOrXyk_BsSzX7gYHxSZOB3eqgjrWFWoSIifG5wDtvyLDHfC46xHpo4FItpBsZkiZoW8fvx-qPR57YCypSHFeCAwipUDx58y3ucoVk0q1LPBfC1xEFBJu3O_FDiFAFrRWIDrZHhoHfaWdyWBAK9tOfr2mlUUSJcnh-jecU4l7Q1EH9eBkjAecv5ejPF1Z2-ac6GwafB5JB6zt57peQzGiXLfgnrVQOKGQmf=w1369-h903-no"
+      "url": "https://lh3.googleusercontent.com/VC9GMkBxoZ6-KGddzMeSwVYRtPMiNAPXCpo3iwlbGyxdVaH7bgIp63uZHNlFE52H95fD9VDJYRpQ-HZKZsSPi4out4ZEjXjoPaIBs559Umfh8QEuF-l6NSQtvSuinMooFJA4KIT08n4hVGw_l9oVswd7nqPG9MoGDBUfpheO_76dDGHg6syWGwm51uEPZ7y7eu0Dr2yGdFEIKEWsODsNmG7U0eFdsemEygIpWhmG-0lesdsfNBgbsnuLVasp_Onpg52YkpQJVaZyciv87cXQq2Y4-6C0j09ju47-SZgEQXViS5Nk9X9m2_hm8dLQSwK_2fWG3_Wyb07p1Pqv_GJrmaJK5xrnwvinHWWlKYRkq4rqr69cY05Mr89h5YDIGY40T8DH6tV-2zTzvm2iftu2hrdoTlvD-XzkIZ7VoK3uzXpth2ESbVHz_AKxvmasD5SOrXyk_BsSzX7gYHxSZOB3eqgjrWFWoSIifG5wDtvyLDHfC46xHpo4FItpBsZkiZoW8fvx-qPR57YCypSHFeCAwipUDx58y3ucoVk0q1LPBfC1xEFBJu3O_FDiFAFrRWIDrZHhoHfaWdyWBAK9tOfr2mlUUSJcnh-jecU4l7Q1EH9eBkjAecv5ejPF1Z2-ac6GwafB5JB6zt57peQzGiXLfgnrVQOKGQmf=w1369-h903-no",
+      "isfavorite": true
+    },
+    {
+      "userid": 1,
+      "url": "https://lh3.googleusercontent.com/CZe5uNBEGNnYZrw9j6dDKwHWHyc0baBSQktxDHfEL1F0nW8LO-aKOOppAimxo-gqAzuXIkkyujdCwPBiE94YLFhriaEZ6AAXZewMwYWvSiepSrSGdvl3HQ69aJF42pqlh9zo7rclfhTRcBk8dHehq98YQq_1xu_YXHoxSF1TRhY1ZW8H6pgTS7605Rj6-cSE7yUPmOtD93MrddcmCT4S1muO_AHrG_A6ojQTfH-RJCYiqJ6UEBUdxIU6J7kJT6tDui-6Oc2flY-wrj-cZJUvNzxDLJHHc9JvYPN2MBxzI75QyLsXyJDzk_9Hie9n3CMzIUVSf57irQPhq_H6xA9zx8oFcjF44SwS_uzjnoe-0ngJUeoFcnFR5n0ZTaJZgAHrql0N_OJrg0CpBUscF3_N24D4dwPvDH9tN_dRltxHZe40gXTyYt_X5M5qxywSOyuA9ZtMFB9wwXakbhncrXHAthH878i0SixQPWEN0PsHeQ-F6aZTDw_-7X01W9tJtXYSq8XOaZlGM1v3kINZOL7d3T89k-B-UoSeBzu4PZeStEXG6nCJ0weibaQlzoon6gpTRkK2urDulmU707nzsZPAm5oHG4OwZYWs063keBldTIAa1pkZzM4MixCtc3TKcFEUhQ0-4QogMmkg_EVAa50B99WS2I0F8ZOs=w1605-h903-no",
+      "isfavorite": true,
+      "id": 7
+    },
+    {
+      "userid": 1,
+      "url": "https://lh3.googleusercontent.com/vUL1D2v-28G3Qh6H0bl6vz1vsaKW36jEEZw3RYuFXTPatma5CPOn3egilKrJSqQJb3taVyOmxxoWaRaZS4zqT9zRkUB1c_7Gk3LwhZDAHJuJSTIxtalaT4U7nANgIrlfgBwIiQkDV1JRGw6eH94PHNUbevrM5o7vc0p8HYNfNgB2u0c9l90mGjOM9wBjLk19ffcRzaM554S8vtfOGEaKMJC_XlrJonY1_5shd7jg-gAH933UKalR7ksyg0Nn4TPOyFD7xOdLw13BMKXDgWn98YIXs9D77d0kO-O-JomMTfcmGwD4r1wiRyWboJj0FNIKli83cjlCE5aqVe5u9eykJ9iiLOc_n6eQAkyQ9Hmk2NkHPmf5vZWB_em8D_1Z3RZ-n8aJfv1KS_aE18DRofR-mAxmjseqfZNOCHsA-MuastAYkc_nmf4Ucs9uvBS4SGB-eCwWI855b6Odp6VTvEI7ojO7-Z64CCRun67ye3gzTPYVLitETPLJh___1MLCZ5kwCIHFmkmsQa2R4MS9nyWWxEBN63DUQIcdMsG_jJOolIAJZQYgLWOOKCrjl1AUc13HgfbWsGhYhERtkKi1BOnsEEBCvEHE6-GmJe8kU6R0cP56cEYMlJ5cXJ6MW0PvA-XqkSJtHCsCPKOPE0srjdyNoOTv89IHjJwr=w680-h643-no",
+      "isfavorite": true,
+      "id": 8
     }
   ],
   "quotes": [
     {
       "id": 1,
-      "userid": 1,
-      "quote": "It’s ridiculously fun and addicting, but it does make me want to throw things.",
-      "author": "Caroline Brownlee"
+      "quote": "It’s ridiculously fun and addicting, but it does make me want to throw things. Test this",
+      "author": "Caroline Brownlee 2",
+      "isfavorite": true
     },
     {
       "id": 2,
-      "userid": 1,
-      "quote": "You’re better than you think you are! Don’t doubt yourself. Self-doubt will take you down!",
-      "author": "Caroline Brownlee"
+      "quote": "You’re better than you think you are! Don’t doubt yourself. Self-doubt will take you down! 2",
+      "author": "Caroline Brownlee 3",
+      "isfavorite": true
     },
     {
       "id": 3,
       "userid": 2,
       "quote": "When something is important enough, you do it even if the odds are not in your favor.",
-      "author": "Elon Musk"
+      "author": "Elon Musk",
+      "isfavorite": true
     },
     {
       "id": 4,
       "userid": 2,
       "quote": "If you think you can, you can.  If think you can't, you can't.",
-      "author":  "Anonymous"
+      "author": "Anonymous",
+      "isfavorite": true
     },
     {
       "id": 5,
       "userid": 3,
       "quote": "It's all talk until the code works.",
-      "author": "Anonymous"
+      "author": "Anonymous",
+      "isfavorite": true
     },
     {
       "id": 6,
       "userid": 3,
       "quote": "How BADLY do you want it?",
-      "author": "Guess who?"
+      "author": "Guess who?",
+      "isfavorite": true
+    },
+    {
+      "id": 7,
+      "userid": 4,
+      "quote": "This too shall pass!",
+      "author": "Anonymous",
+      "isfavorite": true
+    },
+    {
+      "id": 10,
+      "quote": "Joe Shep is coming around...again...",
+      "author": "Joe Shep"
+    },
+    {
+      "id": 11,
+      "quote": "Dom said \"Give me a beer!\" 3",
+      "author": "Dom 3",
+      "isfavorite": true,
+      "userid": 1
+    },
+    {
+      "id": 12,
+      "quote": "No steam drives anything until it is confined.  No Niagara is turned into power until it is tunneled. No life grows great until it is focused, dedicated and disciplined.",
+      "author": "Harry E. Fosdick",
+      "isfavorite": true,
+      "userid": 1
+    },
+    {
+      "userid": 1,
+      "quote": "Distractions compounded lead to destruction.",
+      "author": "Alex Ittycheriah",
+      "isfavorite": true,
+      "id": 13
+    },
+    {
+      "id": 14,
+      "quote": "Testing quote - 8-3 version 3",
+      "author": "Joy 3",
+      "isfavorite": true,
+      "userid": 1
     }
   ],
   "ideas": [
     {
       "id": 1,
       "userid": 1,
-      "idea": "Let's go play volleyball."
+      "idea": "Let's go play volleyball.",
+      "isfavorite": true
     },
     {
       "id": 2,
       "userid": 1,
-      "idea": "Let's go play ping pong."
+      "idea": "Let's go play ping pong.",
+      "isfavorite": true
     },
     {
       "id": 3,
       "userid": 2,
-      "idea": "Let's have a bake-off benefiting the Children's hospital."
+      "idea": "Let's have a bake-off benefiting the Children's hospital.",
+      "isfavorite": true
     },
     {
       "id": 4,
       "userid": 2,
-      "idea": "Let's have a blood drive."
+      "idea": "Let's have a blood drive.",
+      "isfavorite": true
     },
     {
       "id": 5,
       "userid": 3,
-      "idea": "Let's have a hackathon and award prizes to the top performers."
+      "idea": "Let's have a hackathon and award prizes to the top performers.",
+      "isfavorite": true
     },
     {
       "id": 6,
       "userid": 3,
-      "idea": "Let's play board games!"
+      "idea": "Let's play board games!",
+      "isfavorite": true
     }
   ],
   "activities": [
     {
       "id": 1,
       "userid": 1,
-      "user_description":  "Wine festival",
-      "activity_url": "https://www.eventbrite.com/e/wine-on-the-river-nashville-tickets-52284000854?aff=ebdssbcitybrowse"
+      "user_description": "Wine festival",
+      "activity_url": "https://www.eventbrite.com/e/wine-on-the-river-nashville-tickets-52284000854?aff=ebdssbcitybrowse",
+      "isfavorite": true
     },
     {
       "id": 2,
       "userid": 1,
-      "user_description":  "Music City Belles",
-      "activity_url": "https://www.eventbrite.com/e/music-city-with-the-belles-tickets-55139855793?aff=ebdssbcitybrowse"
+      "user_description": "Music City Belles",
+      "activity_url": "https://www.eventbrite.com/e/music-city-with-the-belles-tickets-55139855793?aff=ebdssbcitybrowse",
+      "isfavorite": true
     },
     {
       "id": 3,
       "userid": 2,
-      "user_description":  "Nashville Brew Fest",
-      "activity_url": "https://www.eventbrite.com/e/2019-nashville-brew-fest-tickets-62226707758?aff=ebdssbcitybrowse"
+      "user_description": "Nashville Brew Fest",
+      "activity_url": "https://www.eventbrite.com/e/2019-nashville-brew-fest-tickets-62226707758?aff=ebdssbcitybrowse",
+      "isfavorite": true
     },
     {
       "id": 4,
       "userid": 2,
-      "user_description":  "The Wallows",
-      "activity_url": "https://www.eventbrite.com/e/wallows-tickets-65212934643?aff=ebdssbcitybrowse"
+      "user_description": "The Wallows",
+      "activity_url": "https://www.eventbrite.com/e/wallows-tickets-65212934643?aff=ebdssbcitybrowse",
+      "isfavorite": true
     },
     {
       "id": 5,
       "userid": 3,
-      "user_description":  "Outloud Music Festival",
-      "activity_url": "https://www.eventbrite.com/e/2019-outloud-music-festival-tickets-62936535873?aff=ebdssbcitybrowse"
+      "user_description": "Outloud Music Festival",
+      "activity_url": "https://www.eventbrite.com/e/2019-outloud-music-festival-tickets-62936535873?aff=ebdssbcitybrowse",
+      "isfavorite": true
     },
     {
       "id": 6,
       "userid": 3,
-      "user_description":  "Breakway Music Festival",
-      "activity_url": "https://www.eventbrite.com/e/breakaway-music-festival-tennessee-tickets-55719367127?aff=ebdssbcitybrowse"
+      "user_description": "Breakway Music Festival",
+      "activity_url": "https://www.eventbrite.com/e/breakaway-music-festival-tennessee-tickets-55719367127?aff=ebdssbcitybrowse",
+      "isfavorite": true
     }
   ]
 }
