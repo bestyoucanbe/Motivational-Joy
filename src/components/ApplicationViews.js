@@ -81,9 +81,7 @@ class ApplicationViews extends Component {
   deletePhoto = photoToDelete => {
     PhotoManager.delete(photoToDelete)
       .then(() =>
-        PhotoManager.getSpecificInfo(
-          `photos?userid=${this.currentUserId}&isfavorite=true`
-        )
+        PhotoManager.getSpecificInfo(`photos?userid=${this.currentUserId}`)
       )
       .then(allPhotos => {
         this.setState({
@@ -109,6 +107,19 @@ class ApplicationViews extends Component {
       .then(allquotes => {
         this.setState({
           quotes: allquotes
+        })
+      })
+  }
+
+  //Delete my quote
+  deleteQuote = quoteToDelete => {
+    QuoteManager.delete(quoteToDelete)
+      .then(() =>
+        QuoteManager.getSpecificInfo(`quotes?userid=${this.currentUserId}`)
+      )
+      .then(allQuotes => {
+        this.setState({
+          quotes: allQuotes
         })
       })
   }
@@ -187,6 +198,7 @@ class ApplicationViews extends Component {
                 quotes={this.state.quotes}
                 getMyQuotes={this.getMyQuotes}
                 currentUserId={this.currentUserId}
+                deleteQuote={this.deleteQuote}
               />
             )
           }}

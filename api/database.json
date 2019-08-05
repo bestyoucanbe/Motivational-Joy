@@ -69,12 +69,14 @@
   "quotes": [
     {
       "id": 1,
+      "userid": 1,
       "quote": "It’s ridiculously fun and addicting, but it does make me want to throw things. Test this",
       "author": "Caroline Brownlee 2",
       "isfavorite": true
     },
     {
       "id": 2,
+      "userid": 1,
       "quote": "You’re better than you think you are! Don’t doubt yourself. Self-doubt will take you down! 2",
       "author": "Caroline Brownlee 3",
       "isfavorite": true
@@ -115,18 +117,6 @@
       "isfavorite": true
     },
     {
-      "id": 10,
-      "quote": "Joe Shep is coming around...again...",
-      "author": "Joe Shep"
-    },
-    {
-      "id": 11,
-      "quote": "Dom said \"Give me a beer!\" 4",
-      "author": "Dom 3",
-      "isfavorite": true,
-      "userid": 1
-    },
-    {
       "id": 12,
       "quote": "No steam drives anything until it is confined.  No Niagara is turned into power until it is tunneled. No life grows great until it is focused, dedicated and disciplined.",
       "author": "Harry E. Fosdick",
@@ -139,13 +129,6 @@
       "author": "Alex Ittycheriah",
       "isfavorite": true,
       "id": 13
-    },
-    {
-      "id": 14,
-      "quote": "Testing quote - 8-3 version 3",
-      "author": "Joy 3",
-      "isfavorite": true,
-      "userid": 1
     },
     {
       "userid": 1,
