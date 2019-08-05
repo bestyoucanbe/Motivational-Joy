@@ -87,7 +87,10 @@ export default class MyIdeas extends Component {
           </div>
           <section className="idea-container w-75">
             {this.props.ideas.map(eachidea => (
-              <div key={eachidea.id} className="card text-white bg-danger mb-3">
+              <div
+                key={eachidea.id}
+                className="card text-white bg-success mb-3"
+              >
                 <div className="card-body">
                   <h5 className="card-title">Idea</h5>
                   <p>{eachidea.idea}</p>
@@ -102,7 +105,7 @@ export default class MyIdeas extends Component {
                   </a>
                   <a
                     href="#"
-                    className="btn btn-warning"
+                    className="btn btn-danger"
                     onClick={() => this.props.deleteIdea(eachidea)}
                   >
                     Delete

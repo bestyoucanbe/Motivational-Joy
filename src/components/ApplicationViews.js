@@ -10,6 +10,8 @@ import ActivityManager from "../modules/ActivityManager"
 import MyPhotos from "./changephotos/MyPhotos"
 import MyQuotes from "./changequotes/MyQuotes"
 import QuoteEditForm from "./changequotes/QuoteEditForm"
+import MyIdeas from "./changeideas/MyIdeas"
+import IdeaEditForm from "./changeideas/IdeaEditForm"
 // import EventbriteManager from "../modules/EventbriteManager"
 
 class ApplicationViews extends Component {
@@ -124,6 +126,41 @@ class ApplicationViews extends Component {
       })
   }
 
+  //Get ALL my ideas
+  getMyIdeas = () => {
+    IdeaManager.getSpecificInfo(`ideas?userid=${this.currentUserId}`).then(
+      allIdeas => {
+        this.setState({
+          ideas: allIdeas
+        })
+      }
+    )
+  }
+
+  //Update my idea
+  updateIdea = editedIdeaObject => {
+    return IdeaManager.put(editedIdeaObject)
+      .then(() => IdeaManager.getAll())
+      .then(allideas => {
+        this.setState({
+          ideas: allideas
+        })
+      })
+  }
+
+  //Delete my idea
+  deleteIdea = ideaToDelete => {
+    IdeaManager.delete(ideaToDelete)
+      .then(() =>
+        IdeaManager.getSpecificInfo(`ideas?userid=${this.currentUserId}`)
+      )
+      .then(allIdeas => {
+        this.setState({
+          ideas: allIdeas
+        })
+      })
+  }
+
   //   IdeaManager.getAll().then(allIdeas => {
   //     this.setState({
   //       ideas: allIdeas
@@ -211,6 +248,33 @@ class ApplicationViews extends Component {
                 {...props}
                 currentUserId={this.currentUserId}
                 updateQuote={this.updateQuote}
+              />
+            )
+          }}
+        />
+        <Route
+          exact
+          path="/My_Ideas"
+          render={props => {
+            return (
+              <MyIdeas
+                {...props}
+                ideas={this.state.ideas}
+                getMyIdeas={this.getMyIdeas}
+                currentUserId={this.currentUserId}
+                deleteIdea={this.deleteIdea}
+              />
+            )
+          }}
+        />
+        <Route
+          path="/My_Ideas/:ideaId(\d+)/edit"
+          render={props => {
+            return (
+              <IdeaEditForm
+                {...props}
+                currentUserId={this.currentUserId}
+                updateIdea={this.updateIdea}
               />
             )
           }}
