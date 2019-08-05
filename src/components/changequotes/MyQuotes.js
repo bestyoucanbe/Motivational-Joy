@@ -1,90 +1,130 @@
 import React, { Component } from "react"
+import { Button, ButtonGroup } from "reactstrap"
 import "./MyQuotes.css"
 import QuoteManager from "../../modules/QuoteManager"
 
 export default class MyQuotes extends Component {
   state = {
     quote: "",
-    author: ""
+    author: "",
+    isfavorite: true,
+    radioSelected: true
   }
 
   handleOnChangeQuote = event => {
-    console.log("I changed", event.target.value)
     this.setState({ quote: event.target.value })
   }
 
   handleOnChangeAuthor = event => {
-    console.log("I changed", event.target.value)
     this.setState({ author: event.target.value })
   }
 
-  currentUserId = parseInt(sessionStorage.getItem("id"))
+  onRadioBtnClick(radioSelected) {
+    this.setState({ isfavorite: radioSelected }) //The value of isfavorite corresponds to what is selected by the radio button
+  }
 
-  handleOnClick = () => {
-    const newQuote = {
-      userid: this.currentUserId,
-      quote: this.state.quote,
-      author: this.state.author,
-      myrank: 10
+  handleOnClickAddQuoteButton = () => {
+    if (this.state.quote === "" || this.state.author === "") {
+      window.alert("Please fill in all fields")
+    } else {
+      const newQuote = {
+        userid: this.props.currentUserId,
+        quote: this.state.quote,
+        author: this.state.author,
+        isfavorite: this.state.isfavorite
+      }
+
+      QuoteManager.post(newQuote).then(() => {
+        this.setState({ quote: "" }) //Clears the field of its values
+        this.setState({ author: "" })
+        this.props.getMyQuotes()
+      })
     }
+  }
 
-    QuoteManager.post(newQuote).then(() => {
-      this.setState({ quote: "" }) //Clears the field of its values
-      this.setState({ author: "" })
-      this.props.appViewsGetMyQuotes()
-    })
+  componentDidMount() {
+    this.props.getMyQuotes()
   }
 
   render() {
     return (
-      <div className="quote-page-container">
-        <div className="form-container w-25">
-          <div className="form-group">
-            <label htmlFor="addaquote">Add a Quote</label>
-            <textarea
-              value={this.state.quote}
-              class="form-control"
-              id="addaquote"
-              rows="3"
-              onChange={this.handleOnChangeQuote}
-            />
-            <label htmlFor="addaquote">Author</label>
-            <textarea
-              value={this.state.author}
-              class="form-control"
-              id="addaquote"
-              rows="3"
-              onChange={this.handleOnChangeAuthor}
-            />
-          </div>
-          <button
-            disabled={!this.state.quote}
-            className="btn btn-primary"
-            onClick={this.handleOnClick}
-          >
-            Submit
-          </button>
+      <div>
+        <div>
+          <h2 className="heading">My Quotes</h2>
         </div>
-        <section className="quote-container w-75">
-          {this.props.quotes.map(eachquote => (
-            <div key={eachquote.id} className="card text-white bg-danger mb-3">
-              <div className="card-body">
-                <h5 class="card-title">Quote</h5>
-                <p>{eachquote.quote}</p>
-                <p>{eachquote.author}</p>
-                <a
-                  href="#"
-                  className="btn btn-primary"
-                  onClick={() => {
-                    this.props.history.push(`/My_Quotes/${eachquote.id}/edit`)
-                  }}
-                >
-                  EDIT
-                </a>
-              </div>
+        <div className="quote-page-container">
+          <div className="form-container w-25">
+            <div className="form-group">
+              <label htmlFor="addaquote">Want to add a quote?</label>
+              <textarea
+                value={this.state.quote}
+                class="form-control"
+                id="addaquote"
+                rows="3"
+                placeholder="(Enter quote here...select if you want it in favorites...and then press the Add Quote button)"
+                onChange={this.handleOnChangeQuote}
+              />
+              <label htmlFor="addaquote">Author</label>
+              <textarea
+                value={this.state.author}
+                class="form-control"
+                id="addaquote"
+                rows="3"
+                placeholder="(Enter name of author)"
+                onChange={this.handleOnChangeAuthor}
+              />
             </div>
-          ))}
-        </section>
+            <div>
+              <h5>Favorite?</h5>
+              <ButtonGroup className="mb-3">
+                <Button
+                  color="success"
+                  onClick={() => this.onRadioBtnClick(true)}
+                  active={this.state.radioSelected === true}
+                >
+                  Yes
+                </Button>
+                <Button
+                  color="danger"
+                  onClick={() => this.onRadioBtnClick(false)}
+                  active={this.state.radioSelected === false}
+                >
+                  No
+                </Button>
+              </ButtonGroup>
+            </div>
+            <button
+              disabled={!this.state.quote}
+              className="btn btn-primary"
+              onClick={this.handleOnClickAddQuoteButton}
+            >
+              Add Quote
+            </button>
+          </div>
+          <section className="quote-container w-75">
+            {this.props.quotes.map(eachquote => (
+              <div
+                key={eachquote.id}
+                className="card text-white bg-danger mb-3"
+              >
+                <div className="card-body">
+                  <h5 class="card-title">Quote</h5>
+                  <p>{eachquote.quote}</p>
+                  <p>{eachquote.author}</p>
+                  <a
+                    href="#"
+                    className="btn btn-primary"
+                    onClick={() => {
+                      this.props.history.push(`/My_Quotes/${eachquote.id}/edit`)
+                    }}
+                  >
+                    Edit
+                  </a>
+                </div>
+              </div>
+            ))}
+          </section>
+        </div>
       </div>
     )
   }
