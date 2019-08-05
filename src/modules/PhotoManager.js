@@ -27,5 +27,10 @@ export default {
       },
       body: JSON.stringify(putPhoto)
     }).then(data => data.json())
+  },
+  delete(deletePhoto) {
+    return fetch(`${remoteURL}/photos/${deletePhoto.id}`, {
+      method: "DELETE"
+    }).then(e => e.json())
   }
 }

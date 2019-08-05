@@ -7,7 +7,7 @@ import PhotoManager from "../modules/PhotoManager"
 import QuoteManager from "../modules/QuoteManager"
 import IdeaManager from "../modules/IdeaManager"
 import ActivityManager from "../modules/ActivityManager"
-// import MyPhotos from "./changephotos/MyPhotos"
+import MyPhotos from "./changephotos/MyPhotos"
 // import MyQuotes from "./changequotes/MyQuotes"
 // import EventbriteManager from "../modules/EventbriteManager"
 // import QuoteEditForm from "./changequotes/QuoteEditForm"
@@ -66,6 +66,31 @@ class ApplicationViews extends Component {
     })
   }
 
+  //Get ALL my photos
+  getMyPhotos = () => {
+    PhotoManager.getSpecificInfo(`photos?userid=${this.currentUserId}`).then(
+      allPhotos => {
+        this.setState({
+          photos: allPhotos
+        })
+      }
+    )
+  }
+
+  deletePhoto = photoToDelete => {
+    PhotoManager.delete(photoToDelete)
+      .then(() =>
+        PhotoManager.getSpecificInfo(
+          `photos?userid=${this.currentUserId}&isfavorite=true`
+        )
+      )
+      .then(allPhotos => {
+        this.setState({
+          photos: allPhotos
+        })
+      })
+  }
+
   // updateQuote = editedQuoteObject => {
   //   return QuoteManager.put(editedQuoteObject)
   //     .then(() => QuoteManager.getAll())
@@ -122,7 +147,7 @@ class ApplicationViews extends Component {
           exact
           path="/My_Favorites"
           render={props => {
-            //The path is to my favorites
+            //This takes you to my favorites page
             return (
               <MyFavorites
                 photos={this.state.photos}
@@ -137,19 +162,20 @@ class ApplicationViews extends Component {
             )
           }}
         />
-        {/* <Route
+        <Route
           exact
           path="/My_Photos"
           render={props => {
-            //The path is to my favorites
             return (
               <MyPhotos
                 photos={this.state.photos}
-                appViewsGetMyPhotos={this.getMyPhotos}
+                getMyPhotos={this.getMyPhotos}
+                currentUserId={this.currentUserId}
+                deletePhoto={this.deletePhoto}
               />
             )
           }}
-        /> */}
+        />
         {/* <Route
           exact
           path="/My_Quotes"
