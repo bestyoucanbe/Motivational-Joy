@@ -1,52 +1,48 @@
 import React, { Component } from "react"
 import { Button, ButtonGroup } from "reactstrap"
-import QuoteManager from "../../modules/QuoteManager"
-import "./QuoteEditForm.css"
-export default class QuoteEditForm extends Component {
+import IdeaManager from "../../modules/IdeaManager"
+import "./IdeaEditForm.css"
+export default class IdeaEditForm extends Component {
   // Set initial state
   state = {
-    quote: "",
-    author: "",
+    idea: "",
     isfavorite: true,
     radioSelected: true
   }
 
-  handleOnChangeQuote = event => {
-    this.setState({ quote: event.target.value })
-  }
+  //FIXME: Remove this from here and have it passed in from Application Views
+  currentUserId = parseInt(sessionStorage.getItem("id"))
 
-  handleOnChangeAuthor = event => {
-    this.setState({ author: event.target.value })
+  handleOnChangeIdea = event => {
+    this.setState({ idea: event.target.value })
   }
 
   onRadioBtnClick(radioSelected) {
     this.setState({ isfavorite: radioSelected })
   }
 
-  updateExistingQuote = evt => {
+  updateExistingIdea = evt => {
     evt.preventDefault()
-    if (this.state.quote === "" || this.state.author === "") {
+    if (this.state.idea === "") {
       window.alert("Please fill in all fields")
     } else {
-      const editedQuote = {
-        id: parseInt(this.props.match.params.quoteId),
-        quote: this.state.quote,
-        author: this.state.author,
+      const editedIdea = {
+        id: parseInt(this.props.match.params.ideaId),
+        idea: this.state.idea,
         isfavorite: this.state.isfavorite,
-        userid: this.props.currentUserId
+        userid: this.currentUserId
       }
 
       this.props
-        .updateQuote(editedQuote)
-        .then(() => this.props.history.push("/My_Quotes"))
+        .updateIdea(editedIdea)
+        .then(() => this.props.history.push("/My_Ideas"))
     }
   }
 
   componentDidMount() {
-    QuoteManager.get(this.props.match.params.quoteId).then(quoteToEdit => {
+    IdeaManager.get(this.props.match.params.ideaId).then(ideaToEdit => {
       this.setState({
-        quote: quoteToEdit.quote,
-        author: quoteToEdit.author
+        idea: ideaToEdit.idea
       })
     })
   }
@@ -56,28 +52,18 @@ export default class QuoteEditForm extends Component {
       <React.Fragment>
         <div>
           <div>
-            <h2 className="heading">Edit a Quote</h2>
+            <h2 className="headingIdeaEdit">Edit a Idea</h2>
           </div>
           <div className="form-container w-50">
-            <form className="quoteForm">
+            <form className="ideaForm">
               <div className="form-group">
-                <label htmlFor="change-quote">Quote</label>
+                <label htmlFor="change-idea">Idea</label>
                 <textarea
-                  value={this.state.quote}
+                  value={this.state.idea}
                   className="form-control"
-                  id="change-quote"
+                  id="change-idea"
                   rows="3"
-                  onChange={this.handleOnChangeQuote}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="author">Author</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  onChange={this.handleOnChangeAuthor}
-                  id="author"
-                  value={this.state.author}
+                  onChange={this.handleOnChangeIdea}
                 />
               </div>
               <div>
@@ -101,7 +87,7 @@ export default class QuoteEditForm extends Component {
               </div>
               <button
                 type="submit"
-                onClick={this.updateExistingQuote}
+                onClick={this.updateExistingIdea}
                 className="btn btn-primary"
               >
                 Submit

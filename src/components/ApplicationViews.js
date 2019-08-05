@@ -206,7 +206,13 @@ class ApplicationViews extends Component {
         <Route
           path="/My_Quotes/:quoteId(\d+)/edit"
           render={props => {
-            return <QuoteEditForm {...props} updateQuote={this.updateQuote} />
+            return (
+              <QuoteEditForm
+                {...props}
+                currentUserId={this.currentUserId}
+                updateQuote={this.updateQuote}
+              />
+            )
           }}
         />
         {/* <Route
