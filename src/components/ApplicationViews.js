@@ -10,6 +10,8 @@ import ActivityManager from "../modules/ActivityManager"
 import MyPhotos from "./changephotos/MyPhotos"
 import MyQuotes from "./changequotes/MyQuotes"
 import QuoteEditForm from "./changequotes/QuoteEditForm"
+import MyIdeas from "./changeideas/MyIdeas"
+import IdeaEditForm from "./changeideas/IdeaEditForm"
 // import EventbriteManager from "../modules/EventbriteManager"
 
 class ApplicationViews extends Component {
@@ -81,9 +83,7 @@ class ApplicationViews extends Component {
   deletePhoto = photoToDelete => {
     PhotoManager.delete(photoToDelete)
       .then(() =>
-        PhotoManager.getSpecificInfo(
-          `photos?userid=${this.currentUserId}&isfavorite=true`
-        )
+        PhotoManager.getSpecificInfo(`photos?userid=${this.currentUserId}`)
       )
       .then(allPhotos => {
         this.setState({
@@ -109,6 +109,54 @@ class ApplicationViews extends Component {
       .then(allquotes => {
         this.setState({
           quotes: allquotes
+        })
+      })
+  }
+
+  //Delete my quote
+  deleteQuote = quoteToDelete => {
+    QuoteManager.delete(quoteToDelete)
+      .then(() =>
+        QuoteManager.getSpecificInfo(`quotes?userid=${this.currentUserId}`)
+      )
+      .then(allQuotes => {
+        this.setState({
+          quotes: allQuotes
+        })
+      })
+  }
+
+  //Get ALL my ideas
+  getMyIdeas = () => {
+    IdeaManager.getSpecificInfo(`ideas?userid=${this.currentUserId}`).then(
+      allIdeas => {
+        this.setState({
+          ideas: allIdeas
+        })
+      }
+    )
+  }
+
+  //Update my idea
+  updateIdea = editedIdeaObject => {
+    return IdeaManager.put(editedIdeaObject)
+      .then(() => IdeaManager.getAll())
+      .then(allideas => {
+        this.setState({
+          ideas: allideas
+        })
+      })
+  }
+
+  //Delete my idea
+  deleteIdea = ideaToDelete => {
+    IdeaManager.delete(ideaToDelete)
+      .then(() =>
+        IdeaManager.getSpecificInfo(`ideas?userid=${this.currentUserId}`)
+      )
+      .then(allIdeas => {
+        this.setState({
+          ideas: allIdeas
         })
       })
   }
@@ -187,6 +235,7 @@ class ApplicationViews extends Component {
                 quotes={this.state.quotes}
                 getMyQuotes={this.getMyQuotes}
                 currentUserId={this.currentUserId}
+                deleteQuote={this.deleteQuote}
               />
             )
           }}
@@ -194,7 +243,40 @@ class ApplicationViews extends Component {
         <Route
           path="/My_Quotes/:quoteId(\d+)/edit"
           render={props => {
-            return <QuoteEditForm {...props} updateQuote={this.updateQuote} />
+            return (
+              <QuoteEditForm
+                {...props}
+                currentUserId={this.currentUserId}
+                updateQuote={this.updateQuote}
+              />
+            )
+          }}
+        />
+        <Route
+          exact
+          path="/My_Ideas"
+          render={props => {
+            return (
+              <MyIdeas
+                {...props}
+                ideas={this.state.ideas}
+                getMyIdeas={this.getMyIdeas}
+                currentUserId={this.currentUserId}
+                deleteIdea={this.deleteIdea}
+              />
+            )
+          }}
+        />
+        <Route
+          path="/My_Ideas/:ideaId(\d+)/edit"
+          render={props => {
+            return (
+              <IdeaEditForm
+                {...props}
+                currentUserId={this.currentUserId}
+                updateIdea={this.updateIdea}
+              />
+            )
           }}
         />
         {/* <Route

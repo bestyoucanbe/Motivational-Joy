@@ -27,5 +27,10 @@ export default {
       },
       body: JSON.stringify(putIdea)
     }).then(data => data.json())
+  },
+  delete(deleteIdea) {
+    return fetch(`${remoteURL}/ideas/${deleteIdea.id}`, {
+      method: "DELETE"
+    }).then(e => e.json())
   }
 }

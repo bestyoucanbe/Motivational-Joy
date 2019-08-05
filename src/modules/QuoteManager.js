@@ -12,11 +12,11 @@ export default {
   },
   post(newQuote) {
     return fetch(`${remoteURL}/quotes`, {
-      method:  "POST",
+      method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body:  JSON.stringify(newQuote)
+      body: JSON.stringify(newQuote)
     }).then(data => data.json())
   },
   put(editedQuote) {
@@ -26,6 +26,11 @@ export default {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(editedQuote)
-    }).then(data => data.json());
+    }).then(data => data.json())
+  },
+  delete(deleteQuote) {
+    return fetch(`${remoteURL}/quotes/${deleteQuote.id}`, {
+      method: "DELETE"
+    }).then(e => e.json())
   }
 }

@@ -50,7 +50,7 @@ export default class MyQuotes extends Component {
     return (
       <div>
         <div>
-          <h2 className="heading">My Quotes</h2>
+          <h2 className="headingMyQuo">My Quotes</h2>
         </div>
         <div className="quote-page-container">
           <div className="form-container w-25">
@@ -58,7 +58,7 @@ export default class MyQuotes extends Component {
               <label htmlFor="addaquote">Want to add a quote?</label>
               <textarea
                 value={this.state.quote}
-                class="form-control"
+                className="form-control"
                 id="addaquote"
                 rows="3"
                 placeholder="(Enter quote here...select if you want it in favorites...and then press the Add Quote button)"
@@ -67,7 +67,7 @@ export default class MyQuotes extends Component {
               <label htmlFor="addaquote">Author</label>
               <textarea
                 value={this.state.author}
-                class="form-control"
+                className="form-control"
                 id="addaquote"
                 rows="3"
                 placeholder="(Enter name of author)"
@@ -108,17 +108,24 @@ export default class MyQuotes extends Component {
                 className="card text-white bg-danger mb-3"
               >
                 <div className="card-body">
-                  <h5 class="card-title">Quote</h5>
+                  <h5 className="card-title">Quote</h5>
                   <p>{eachquote.quote}</p>
                   <p>{eachquote.author}</p>
                   <a
                     href="#"
-                    className="btn btn-primary"
+                    className="btn btn-primary mb-2"
                     onClick={() => {
                       this.props.history.push(`/My_Quotes/${eachquote.id}/edit`)
                     }}
                   >
                     Edit
+                  </a>
+                  <a
+                    href="#"
+                    className="btn btn-warning"
+                    onClick={() => this.props.deleteQuote(eachquote)}
+                  >
+                    Delete
                   </a>
                 </div>
               </div>
