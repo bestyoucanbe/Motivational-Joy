@@ -1,21 +1,28 @@
 import React, { Component } from "react"
+import { Button, ButtonGroup } from "reactstrap"
 import "./MyPhotos.css"
 import PhotoManager from "../../modules/PhotoManager"
 
 export default class MyPhotos extends Component {
   state = {
-    value: ""
+    value: "",
+    isfavorite: true,
+    radioSelected: true
   }
 
   handleOnChangePhotoUrl = event => {
     this.setState({ value: event.target.value })
   }
 
+  onRadioBtnClick(radioSelected) {
+    this.setState({ isfavorite: radioSelected })
+  }
+
   handleOnClickAddPhotoButton = () => {
     const newPhoto = {
       userid: this.props.currentUserId,
       url: this.state.value,
-      isfavorite: true
+      isfavorite: this.state.isfavorite
     }
     PhotoManager.post(newPhoto).then(() => {
       this.setState({ value: "" }) //Clears the field of its values
@@ -42,13 +49,32 @@ export default class MyPhotos extends Component {
                 className="form-control"
                 id="addaphoto"
                 rows="3"
-                placeholder="(Enter image address here...then click the Add Photo button)"
+                placeholder="(Enter image address here...select if you want it in favorites...and then press the Add Photo button)"
                 onChange={this.handleOnChangePhotoUrl}
               />
             </div>
+            <div>
+              <h5>Favorite?</h5>
+              <ButtonGroup className="mb-3">
+                <Button
+                  color="success"
+                  onClick={() => this.onRadioBtnClick(true)}
+                  active={this.state.radioSelected === true}
+                >
+                  Yes
+                </Button>
+                <Button
+                  color="danger"
+                  onClick={() => this.onRadioBtnClick(false)}
+                  active={this.state.radioSelected === false}
+                >
+                  No
+                </Button>
+              </ButtonGroup>
+            </div>
             <button
               disabled={!this.state.value}
-              className="btn btn-success"
+              className="btn btn-primary"
               onClick={this.handleOnClickAddPhotoButton}
             >
               Add Photo
