@@ -38,7 +38,7 @@ export default class MyPhotos extends Component {
     return (
       <div>
         <div>
-          <h2 className="heading">My Photos</h2>
+          <h2 className="headingmypho">My Photos</h2>
         </div>
         <div className="photo-page-container">
           <div className="form-container w-25">

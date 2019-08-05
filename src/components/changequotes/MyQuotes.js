@@ -50,7 +50,7 @@ export default class MyQuotes extends Component {
     return (
       <div>
         <div>
-          <h2 className="heading">My Quotes</h2>
+          <h2 className="headingMyQuo">My Quotes</h2>
         </div>
         <div className="quote-page-container">
           <div className="form-container w-25">

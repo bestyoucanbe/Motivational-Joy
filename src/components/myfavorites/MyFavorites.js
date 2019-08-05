@@ -48,7 +48,7 @@ export default class MyFavorites extends Component {
     return (
       <div>
         <div>
-          <h2 className="heading">My Favorites</h2>
+          <h2 className="headingmyfav">My Favorites</h2>
         </div>
         <div className="allitems-container">
           {this.props.photos.map(eachphoto => (

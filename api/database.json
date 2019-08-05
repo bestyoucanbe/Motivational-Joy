@@ -55,12 +55,6 @@
     },
     {
       "userid": 1,
-      "url": "https://lh3.googleusercontent.com/vUL1D2v-28G3Qh6H0bl6vz1vsaKW36jEEZw3RYuFXTPatma5CPOn3egilKrJSqQJb3taVyOmxxoWaRaZS4zqT9zRkUB1c_7Gk3LwhZDAHJuJSTIxtalaT4U7nANgIrlfgBwIiQkDV1JRGw6eH94PHNUbevrM5o7vc0p8HYNfNgB2u0c9l90mGjOM9wBjLk19ffcRzaM554S8vtfOGEaKMJC_XlrJonY1_5shd7jg-gAH933UKalR7ksyg0Nn4TPOyFD7xOdLw13BMKXDgWn98YIXs9D77d0kO-O-JomMTfcmGwD4r1wiRyWboJj0FNIKli83cjlCE5aqVe5u9eykJ9iiLOc_n6eQAkyQ9Hmk2NkHPmf5vZWB_em8D_1Z3RZ-n8aJfv1KS_aE18DRofR-mAxmjseqfZNOCHsA-MuastAYkc_nmf4Ucs9uvBS4SGB-eCwWI855b6Odp6VTvEI7ojO7-Z64CCRun67ye3gzTPYVLitETPLJh___1MLCZ5kwCIHFmkmsQa2R4MS9nyWWxEBN63DUQIcdMsG_jJOolIAJZQYgLWOOKCrjl1AUc13HgfbWsGhYhERtkKi1BOnsEEBCvEHE6-GmJe8kU6R0cP56cEYMlJ5cXJ6MW0PvA-XqkSJtHCsCPKOPE0srjdyNoOTv89IHjJwr=w680-h643-no",
-      "isfavorite": true,
-      "id": 8
-    },
-    {
-      "userid": 1,
       "url": "https://lh3.googleusercontent.com/rkw6tTOh6ozE5ou6LRVmT56I3uvym1GjVD8up75UvKcvv9qspj5PdgTidiJvo3Hwv1QhHy_HfGTIHM4aHG2-u3EcTYKPWsFAGuEmu15XszOJpDXS0JB9zLpkjODKlhnnJAJSj-yxs1U6VJh3VkFnZVq_gqxmJ-kbzifriyFJ2Rp2eXBVx-LDYKLYtvhHWp-oE0wf1N9HPP-vlw0JPIxOi_ocmIzKX6HH8gfqb1CiYxeL5JCi0VnWopn3ZPr0z0O3GjpuNV6OKHnXSQvsS4MibS3HWxIqUFRuYueIV2anDEtEVhD1aklQd4gAezSpNYUIq82G1RzZW-6740h9VYP4_CaEg0etLjW0CIZZlDeLClBKyn5vw8w5fFGUvu7qXvDDPpV-aW6uoHG4tdvvcvh00xz3XPjgS_WUvCLd_MY5GogVxK8de4N9Mr0LV4X0R9zI50Uosa0Rkzt_hWWhksM2RIUtevZHU4O_qkod6UcAsE2rYFCUvONWh8gPqYICfF7-ovTz36EpiteVl2glVJAGBA-IVj3W70WD7bedKm5fhB9Jw2pCWMSquQh1BF9P2lJC8efEYyyKAAuo1O4nIcKpmGLFGb8cpA03ZLqfiC7-_JggYKh0rIIdL5mh3JyBRZWLr_jWuGBA7oRGhzQ1SGsjAvlysC2ceve1=w459-h815-no",
       "isfavorite": true,
       "id": 9
@@ -69,10 +63,10 @@
   "quotes": [
     {
       "id": 1,
-      "userid": 1,
       "quote": "It’s ridiculously fun and addicting, but it does make me want to throw things. Test this",
-      "author": "Caroline Brownlee 2",
-      "isfavorite": true
+      "author": "Caroline Brownlee ",
+      "isfavorite": true,
+      "userid": 1
     },
     {
       "id": 2,
