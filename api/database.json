@@ -121,7 +121,7 @@
     },
     {
       "id": 11,
-      "quote": "Dom said \"Give me a beer!\" 3",
+      "quote": "Dom said \"Give me a beer!\" 4",
       "author": "Dom 3",
       "isfavorite": true,
       "userid": 1
@@ -146,6 +146,34 @@
       "author": "Joy 3",
       "isfavorite": true,
       "userid": 1
+    },
+    {
+      "userid": 1,
+      "quote": "Testing Quote 8-5",
+      "author": "Joy",
+      "isfavorite": true,
+      "id": 15
+    },
+    {
+      "id": 16,
+      "quote": "Testing Quote 8-5",
+      "author": "Joy",
+      "isfavorite": true,
+      "userid": 1
+    },
+    {
+      "id": 17,
+      "quote": "Test Quote 8-5 Strike 3",
+      "author": "Joy",
+      "isfavorite": true,
+      "userid": 1
+    },
+    {
+      "userid": 1,
+      "quote": "Test what happens 8-5",
+      "author": "Joy",
+      "isfavorite": false,
+      "id": 18
     }
   ],
   "ideas": [

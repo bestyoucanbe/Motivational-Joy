@@ -15,14 +15,14 @@ export default class MyPhotos extends Component {
   }
 
   onRadioBtnClick(radioSelected) {
-    this.setState({ isfavorite: radioSelected })
+    this.setState({ isfavorite: radioSelected }) //The value of isfavorite corresponds to what is selected by the radio button
   }
 
   handleOnClickAddPhotoButton = () => {
     const newPhoto = {
       userid: this.props.currentUserId,
       url: this.state.value,
-      isfavorite: this.state.isfavorite
+      isfavorite: this.state.isfavorite //Whatever is selected by the radiobutton is passed.
     }
     PhotoManager.post(newPhoto).then(() => {
       this.setState({ value: "" }) //Clears the field of its values

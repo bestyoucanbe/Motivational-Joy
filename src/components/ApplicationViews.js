@@ -8,9 +8,9 @@ import QuoteManager from "../modules/QuoteManager"
 import IdeaManager from "../modules/IdeaManager"
 import ActivityManager from "../modules/ActivityManager"
 import MyPhotos from "./changephotos/MyPhotos"
-// import MyQuotes from "./changequotes/MyQuotes"
+import MyQuotes from "./changequotes/MyQuotes"
+import QuoteEditForm from "./changequotes/QuoteEditForm"
 // import EventbriteManager from "../modules/EventbriteManager"
-// import QuoteEditForm from "./changequotes/QuoteEditForm"
 
 class ApplicationViews extends Component {
   state = {
@@ -55,7 +55,7 @@ class ApplicationViews extends Component {
       })
     })
   }
-
+  //Get only my favorite activities
   getMyFavoriteActivities = () => {
     ActivityManager.getSpecificInfo(
       `activities?userid=${this.currentUserId}&isfavorite=true`
@@ -77,6 +77,7 @@ class ApplicationViews extends Component {
     )
   }
 
+  //Delete a specific photo
   deletePhoto = photoToDelete => {
     PhotoManager.delete(photoToDelete)
       .then(() =>
@@ -90,27 +91,27 @@ class ApplicationViews extends Component {
         })
       })
   }
+  //Get ALL my quotes
+  getMyQuotes = () => {
+    QuoteManager.getSpecificInfo(`quotes?userid=${this.currentUserId}`).then(
+      allQuotes => {
+        this.setState({
+          quotes: allQuotes
+        })
+      }
+    )
+  }
 
-  // updateQuote = editedQuoteObject => {
-  //   return QuoteManager.put(editedQuoteObject)
-  //     .then(() => QuoteManager.getAll())
-  //     .then(allquotes => {
-  //       this.setState({
-  //         quotes: allquotes
-  //       })
-  //     })
-  // }
-  //FIXME:  BIG FIX-->Fetch all items on individual pages...not here in Application views!
-  // componentDidMount() {
-  //   //Each manager section contains the API calls to the database
-
-  //   this.getMyFavoritePhotos(
-  //     `?userid=${+sessionStorage.getItem("id")}&isfavorite=true`
-  //   ) //Calls the function to get photos for the active user from the database.
-
-  //   this.getMyQuotes() //Calls the function to get quotes for the active user from the database.
-
-  //   //FIXME:  Write functions for each section that gets data for the active user.
+  //Update my quote
+  updateQuote = editedQuoteObject => {
+    return QuoteManager.put(editedQuoteObject)
+      .then(() => QuoteManager.getAll())
+      .then(allquotes => {
+        this.setState({
+          quotes: allquotes
+        })
+      })
+  }
 
   //   IdeaManager.getAll().then(allIdeas => {
   //     this.setState({
@@ -176,7 +177,7 @@ class ApplicationViews extends Component {
             )
           }}
         />
-        {/* <Route
+        <Route
           exact
           path="/My_Quotes"
           render={props => {
@@ -184,41 +185,33 @@ class ApplicationViews extends Component {
               <MyQuotes
                 {...props}
                 quotes={this.state.quotes}
-                appViewsGetMyQuotes={this.getMyQuotes}
+                getMyQuotes={this.getMyQuotes}
+                currentUserId={this.currentUserId}
               />
             )
           }}
-        /> */}
-        {/* <Route
+        />
+        <Route
           path="/My_Quotes/:quoteId(\d+)/edit"
           render={props => {
             return <QuoteEditForm {...props} updateQuote={this.updateQuote} />
           }}
-        /> */}
+        />
         {/* <Route
-              exact
-              path="/My_Items"
-              render={props => {
-                //The path is to my items
-                return <MyItems photos={this.state.photos}
-                                quotes={this.state.quotes}
-                                ideas={this.state.ideas}
-                                activities={this.state.activities}
-                                     />
-              }}
-            />
-            <Route
-              exact
-              path="/All_Items"
-              render={props => {
-                //The path is to all items
-                return <AllItems  photos={this.state.photos}
-                                  quotes={this.state.quotes}
-                                  ideas={this.state.ideas}
-                                  activities={this.state.activities}
-                                     />
-              }}
-            /> */}
+          exact
+          path="/All_Items"
+          render={props => {
+            //The path is to all items
+            return (
+              <AllItems
+                photos={this.state.photos}
+                quotes={this.state.quotes}
+                ideas={this.state.ideas}
+                activities={this.state.activities}
+              />
+            )
+          }}
+        /> */}
         {/* Logout Route Needed */}
       </React.Fragment>
     )
