@@ -107,7 +107,7 @@ export default class MyFavorites extends Component {
             >
               <div className="card-body">
                 <h5 className="card-title">Activity</h5>
-                <p>{eachactivity.user_description}</p>
+                <p>{eachactivity.activity_nickname}</p>
                 <a
                   href="#"
                   onClick={() => this.onClickActivityHandler(eachactivity)}

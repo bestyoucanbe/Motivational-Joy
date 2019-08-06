@@ -12,6 +12,8 @@ import MyQuotes from "./changequotes/MyQuotes"
 import QuoteEditForm from "./changequotes/QuoteEditForm"
 import MyIdeas from "./changeideas/MyIdeas"
 import IdeaEditForm from "./changeideas/IdeaEditForm"
+import MyActivities from "./changeactivities/MyActivities"
+import ActivityEditForm from "./changeactivities/ActivityEditForm"
 // import EventbriteManager from "../modules/EventbriteManager"
 
 class ApplicationViews extends Component {
@@ -161,6 +163,43 @@ class ApplicationViews extends Component {
       })
   }
 
+  //Get ALL my activities
+  getMyActivities = () => {
+    ActivityManager.getSpecificInfo(
+      `activities?userid=${this.currentUserId}`
+    ).then(allActivities => {
+      this.setState({
+        activities: allActivities
+      })
+    })
+  }
+
+  //Update my activity
+  updateActivity = editedActivityObject => {
+    return ActivityManager.put(editedActivityObject)
+      .then(() => ActivityManager.getAll())
+      .then(allactivities => {
+        this.setState({
+          activities: allactivities
+        })
+      })
+  }
+
+  //Delete my activity
+  deleteActivity = activityToDelete => {
+    ActivityManager.delete(activityToDelete)
+      .then(() =>
+        ActivityManager.getSpecificInfo(
+          `activities?userid=${this.currentUserId}`
+        )
+      )
+      .then(allActivities => {
+        this.setState({
+          activities: allActivities
+        })
+      })
+  }
+
   //   IdeaManager.getAll().then(allIdeas => {
   //     this.setState({
   //       ideas: allIdeas
@@ -275,6 +314,33 @@ class ApplicationViews extends Component {
                 {...props}
                 currentUserId={this.currentUserId}
                 updateIdea={this.updateIdea}
+              />
+            )
+          }}
+        />
+        <Route
+          exact
+          path="/My_Activities"
+          render={props => {
+            return (
+              <MyActivities
+                {...props}
+                activities={this.state.activities}
+                getMyActivities={this.getMyActivities}
+                currentUserId={this.currentUserId}
+                deleteActivity={this.deleteActivity}
+              />
+            )
+          }}
+        />
+        <Route
+          path="/My_Activities/:activityId(\d+)/edit"
+          render={props => {
+            return (
+              <ActivityEditForm
+                {...props}
+                currentUserId={this.currentUserId}
+                updateActivity={this.updateActivity}
               />
             )
           }}
