@@ -227,7 +227,13 @@ class ApplicationViews extends Component {
           exact
           path="/login"
           render={props => {
-            //The path is to my favorites
+            return <Login {...props} />
+          }}
+        />
+        <Route
+          exact
+          path="/logout"
+          render={props => {
             return <Login {...props} />
           }}
         />

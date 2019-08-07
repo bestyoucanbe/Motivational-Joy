@@ -11,8 +11,8 @@ export default class ActivityEditForm extends Component {
     radioSelected: true
   }
 
-  handleOnChangeActivity = event => {
-    this.setState({ activity: event.target.value })
+  handleOnChangeActivityNickname = event => {
+    this.setState({ activity_nickname: event.target.value })
   }
 
   onRadioBtnClick(radioSelected) {
@@ -22,11 +22,11 @@ export default class ActivityEditForm extends Component {
   updateExistingActivity = evt => {
     evt.preventDefault()
     if (this.state.activity === "") {
-      window.alert("Please fill in all fields")
+      window.alert("Please fill in the Activity Title/Description field")
     } else {
       const editedActivity = {
         id: parseInt(this.props.match.params.activityId),
-        activity: this.state.activity,
+        activity_nickname: this.state.activity_nickname,
         isfavorite: this.state.isfavorite,
         userid: this.props.currentUserId
       }
@@ -40,8 +40,9 @@ export default class ActivityEditForm extends Component {
   componentDidMount() {
     ActivityManager.get(this.props.match.params.activityId).then(
       activityToEdit => {
+        console.log("activitytoedit", activityToEdit)
         this.setState({
-          activity: activityToEdit.activity
+          activity_nickname: activityToEdit.activity_nickname
         })
       }
     )
@@ -59,11 +60,11 @@ export default class ActivityEditForm extends Component {
               <div className="form-group">
                 <label htmlFor="change-activity">Activity</label>
                 <textarea
-                  value={this.state.activity}
+                  value={this.state.activity_nickname}
                   className="form-control"
                   id="change-activity"
                   rows="3"
-                  onChange={this.handleOnChangeActivity}
+                  onChange={this.handleOnChangeActivityNickname}
                 />
               </div>
               <div>
