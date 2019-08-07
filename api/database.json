@@ -74,7 +74,7 @@
     {
       "userid": 1,
       "url": "https://lh3.googleusercontent.com/FdjfoeTiHjj0GEiCnjdmgCj4kMBcDv5pwkIn5UVMvPG3_TXfAUiEE3cEZ1Clj9K05hb7i2duCcQA9DgavlZsudY5zDCjUEa70F3tVOUX73YlioIdAiSR8tQlxya_PYLeaeHG-a8GDo7ZE8177c11RUohaFiletfKx7XLdBdcmFKk9i51hJKOvRwOMExkYgq7nsbts3-IXwEA8uJBMNyuZgsRe2z8iWXzUqOOnzRWFCzjfxPdI5NxPK0omOFNg0FGjf2789b5iVDQxJyupaDm0SjGTWOO935JI7c8K_z8mONvlwyuylyI0RYvEicCj3qV3Okiv9JLf6wtqomxL8FoZ5yK4LGYFFRT0y_yma4ODUCn_yfrLpm6JtnI0orkTtFF_bNI_PtExY3IoYDtdRh4YqBvbsZGo5LOTEvxp4qgmGcKMaPTs977C9XwrAg27UtvrBvoCUghU2K6WB7Ibws92N9qXMOvzg5VpNkvioYgIOWpc5HKFVdY5zubYGHQvoe7qpPm1_lT3Jww078-rO4lURswefytlEG4PNdgC3Kx8ATCGVwNMQFcDaL1hU5TXGoG224FD61Fd8zgjWGhmSeAswmDuOArAkcbT9YY5J29Vf2c06f01hzDQAzC0qO3rb82DnxqmXynS4MJWwUiuN8MUlUVsBUWvQ2m=w700-h843-no",
-      "isfavorite": true,
+      "isfavorite": false,
       "id": 12
     }
   ],
@@ -219,50 +219,56 @@
       "idea": "Test Idea 8-5 #2",
       "isfavorite": true,
       "userid": 1
+    },
+    {
+      "id": 9,
+      "idea": "Add this idea 2",
+      "isfavorite": true,
+      "userid": 1
     }
   ],
   "activities": [
     {
-      "id": 1,
-      "userid": 1,
-      "user_description": "Wine festival",
-      "activity_url": "https://www.eventbrite.com/e/wine-on-the-river-nashville-tickets-52284000854?aff=ebdssbcitybrowse",
-      "isfavorite": true
-    },
-    {
-      "id": 2,
-      "userid": 1,
-      "user_description": "Music City Belles",
-      "activity_url": "https://www.eventbrite.com/e/music-city-with-the-belles-tickets-55139855793?aff=ebdssbcitybrowse",
-      "isfavorite": true
-    },
-    {
       "id": 3,
       "userid": 2,
-      "user_description": "Nashville Brew Fest",
+      "activity_nickname": "Nashville Brew Fest",
       "activity_url": "https://www.eventbrite.com/e/2019-nashville-brew-fest-tickets-62226707758?aff=ebdssbcitybrowse",
       "isfavorite": true
     },
     {
       "id": 4,
       "userid": 2,
-      "user_description": "The Wallows",
+      "activity_nickname": "The Wallows",
       "activity_url": "https://www.eventbrite.com/e/wallows-tickets-65212934643?aff=ebdssbcitybrowse",
       "isfavorite": true
     },
     {
       "id": 5,
       "userid": 3,
-      "user_description": "Outloud Music Festival",
+      "activity_nickname": "Outloud Music Festival",
       "activity_url": "https://www.eventbrite.com/e/2019-outloud-music-festival-tickets-62936535873?aff=ebdssbcitybrowse",
       "isfavorite": true
     },
     {
       "id": 6,
       "userid": 3,
-      "user_description": "Breakway Music Festival",
+      "activity_nickname": "Breakway Music Festival",
       "activity_url": "https://www.eventbrite.com/e/breakaway-music-festival-tennessee-tickets-55719367127?aff=ebdssbcitybrowse",
       "isfavorite": true
+    },
+    {
+      "id": 7,
+      "activity_nickname": "Test Item 8-7 5 pm",
+      "activity_url": "www.yahoo.com",
+      "isfavorite": true,
+      "userid": 1
+    },
+    {
+      "userid": 1,
+      "activity_nickname": "Got Google?",
+      "activity_url": "http://www.google.com",
+      "isfavorite": true,
+      "id": 8
     }
   ]
 }

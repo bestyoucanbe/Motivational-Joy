@@ -27,5 +27,10 @@ export default {
       },
       body: JSON.stringify(putActivity)
     }).then(data => data.json())
+  },
+  delete(deleteActivity) {
+    return fetch(`${remoteURL}/activities/${deleteActivity.id}`, {
+      method: "DELETE"
+    }).then(e => e.json())
   }
 }

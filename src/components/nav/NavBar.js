@@ -49,6 +49,9 @@ export default class Example extends React.Component {
                   <DropdownItem>
                     <Link to="/My_Ideas">My Ideas</Link>
                   </DropdownItem>
+                  <DropdownItem>
+                    <Link to="/My_Activities">My Activities</Link>
+                  </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
                     <Link to="/logout">Logout</Link>
