@@ -24,17 +24,21 @@ export default class MyActivities extends Component {
   }
 
   handleOnClickAddActivityButton = () => {
-    const newActivity = {
-      userid: this.props.currentUserId,
-      activity_nickname: this.state.activity_nickname,
-      activity_url: this.state.value,
-      isfavorite: this.state.isfavorite //Whatever is selected by the radiobutton is passed.
+    if (this.state.activity_url === "" || this.state.activity_nickname === "") {
+      window.alert("Please fill in all fields")
+    } else {
+      const newActivity = {
+        userid: this.props.currentUserId,
+        activity_nickname: this.state.activity_nickname,
+        activity_url: this.state.value,
+        isfavorite: this.state.isfavorite //Whatever is selected by the radiobutton is passed.
+      }
+      ActivityManager.post(newActivity).then(() => {
+        this.setState({ value: "" })
+        this.setState({ activity_nickname: "" }) //Clears the field of its values
+        this.props.getMyActivities()
+      })
     }
-    ActivityManager.post(newActivity).then(() => {
-      this.setState({ value: "" })
-      this.setState({ activity_nickname: "" }) //Clears the field of its values
-      this.props.getMyActivities()
-    })
   }
 
   componentDidMount() {

@@ -229,13 +229,6 @@
   ],
   "activities": [
     {
-      "id": 2,
-      "userid": 1,
-      "activity_nickname": "Music City Belles",
-      "activity_url": "https://www.eventbrite.com/e/music-city-with-the-belles-tickets-55139855793?aff=ebdssbcitybrowse",
-      "isfavorite": true
-    },
-    {
       "id": 3,
       "userid": 2,
       "activity_nickname": "Nashville Brew Fest",
@@ -265,22 +258,17 @@
     },
     {
       "id": 7,
-      "activity_nickname": "Test Item 2",
+      "activity_nickname": "Test Item 8-7 5 pm",
+      "activity_url": "www.yahoo.com",
       "isfavorite": true,
       "userid": 1
     },
     {
       "userid": 1,
-      "activity_nickname": "Test Item 2",
-      "activity_url": "http://www.joytest.com",
+      "activity_nickname": "Got Google?",
+      "activity_url": "http://www.google.com",
       "isfavorite": true,
       "id": 8
-    },
-    {
-      "id": 9,
-      "activity_nickname": "Test Item 4",
-      "isfavorite": false,
-      "userid": 1
     }
   ]
 }

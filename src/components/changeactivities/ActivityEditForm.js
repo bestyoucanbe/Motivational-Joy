@@ -21,12 +21,13 @@ export default class ActivityEditForm extends Component {
 
   updateExistingActivity = evt => {
     evt.preventDefault()
-    if (this.state.activity === "") {
+    if (this.state.activity_nickname === "") {
       window.alert("Please fill in the Activity Title/Description field")
     } else {
       const editedActivity = {
         id: parseInt(this.props.match.params.activityId),
         activity_nickname: this.state.activity_nickname,
+        activity_url: this.state.activity_url,
         isfavorite: this.state.isfavorite,
         userid: this.props.currentUserId
       }
@@ -42,6 +43,7 @@ export default class ActivityEditForm extends Component {
       activityToEdit => {
         console.log("activitytoedit", activityToEdit)
         this.setState({
+          activity_url: activityToEdit.activity_url,
           activity_nickname: activityToEdit.activity_nickname
         })
       }
@@ -56,9 +58,16 @@ export default class ActivityEditForm extends Component {
             <h2 className="headingActivityEdit">Edit a Activity</h2>
           </div>
           <div className="form-container w-50">
+            <label>Link to the Activity:</label>
             <form className="activityForm">
+              <a href={this.state.activity_url} target="_blank">
+                {this.state.activity_url}
+              </a>
+              <p />
               <div className="form-group">
-                <label htmlFor="change-activity">Activity</label>
+                <label htmlFor="change-activity">
+                  Activity Title/Short Description
+                </label>
                 <textarea
                   value={this.state.activity_nickname}
                   className="form-control"
