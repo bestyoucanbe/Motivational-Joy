@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { withRouter } from "react-router"
+import "./Login.css"
 
 class Login extends Component {
   state = {
@@ -64,20 +65,25 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <label>Username:</label>
-        <input
-          type="text"
-          id="username"
-          onChange={this.handleFieldChangeUsername}
-        />
-        <label>Password:</label>
-        <input
-          type="password"
-          id="password"
-          onChange={this.handleFieldChangePassword}
-        />
-        <button onClick={this.findCurrentUser}>Submit</button>
+      <div className="loginform">
+        <h2>Welcome to Motivation Joy</h2>
+        <div className="usernameinfo">
+          <label>Username:</label>
+          <input
+            type="text"
+            id="username"
+            onChange={this.handleFieldChangeUsername}
+          />
+        </div>
+        <div className="passwordinfo">
+          <label>Password:</label>
+          <input
+            type="password"
+            id="password"
+            onChange={this.handleFieldChangePassword}
+          />
+        </div>
+        <button onClick={this.findCurrentUser}>Login</button>
       </div>
     )
   }

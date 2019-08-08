@@ -25,7 +25,10 @@ export default class MotivationJoy extends Component {
       return (
         <React.Fragment>
           <NavBar />
-          <ApplicationViews isAuthenticated={this.state.authenticated} />
+          <ApplicationViews
+            isAuthenticated={this.state.authenticated}
+            setAuthState={this.setAuthState}
+          />
         </React.Fragment>
       )
     } else {
