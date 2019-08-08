@@ -4,11 +4,14 @@ import ApplicationViews from "./ApplicationViews" //Child component
 import Login from "./Login"
 
 export default class MotivationJoy extends Component {
+  //Sets the value of authenticated to whatever is in session storage--A value may not exist!
   state = {
     authenticated: sessionStorage.getItem("id")
   }
 
+  //This function is being passed to the Login component
   setAuthState = () => {
+    //If there is a valid value for id in session storage, then set authenticated to true
     if (sessionStorage.getItem("id")) {
       this.setState({ authenticated: true })
     } else {
@@ -17,6 +20,7 @@ export default class MotivationJoy extends Component {
   }
 
   render() {
+    //If there is a valid value in the state, then render the Application Views and NavBar components.  Otherwise return them to Login.
     if (this.state.authenticated) {
       return (
         <React.Fragment>
