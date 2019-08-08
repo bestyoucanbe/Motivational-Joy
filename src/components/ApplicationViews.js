@@ -2,6 +2,7 @@ import { Route } from "react-router-dom"
 import React, { Component } from "react"
 import { withRouter } from "react-router"
 import Login from "./Login"
+import Logout from "./Logout"
 import MyFavorites from "./myfavorites/MyFavorites"
 import PhotoManager from "../modules/PhotoManager"
 import QuoteManager from "../modules/QuoteManager"
@@ -234,7 +235,7 @@ class ApplicationViews extends Component {
           exact
           path="/logout"
           render={props => {
-            return <Login {...props} />
+            return <Logout {...props} setAuthState={this.props.setAuthState} />
           }}
         />
         <Route
