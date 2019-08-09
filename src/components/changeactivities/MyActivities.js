@@ -65,16 +65,14 @@ export default class MyActivities extends Component {
               <label htmlFor="addaactivity">Want to add an activity?</label>
               <button
                 className="bringlist"
-                onClick={this.handleOnClickBringEventbriteList}
-              >
-                Bring Me a List to Choose From
-              </button>
+                onClick={() => this.props.history.push(`/My_EventbriteList`)}
+              />
               <textarea
                 value={this.state.value}
                 className="form-control"
                 id="addaactivity"
                 rows="3"
-                placeholder="(Enter the Eventbrite url address here...)"
+                placeholder="(Click the button above or enter web url here...)"
                 onChange={this.handleOnChangeActivityUrl}
               />
               <label htmlFor="addanickname">Short Description/Title</label>

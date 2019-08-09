@@ -15,15 +15,15 @@ import MyIdeas from "./changeideas/MyIdeas"
 import IdeaEditForm from "./changeideas/IdeaEditForm"
 import MyActivities from "./changeactivities/MyActivities"
 import ActivityEditForm from "./changeactivities/ActivityEditForm"
-// import EventbriteManager from "../modules/EventbriteManager"
+import EventbriteManager from "../modules/EventbriteManager"
 
 class ApplicationViews extends Component {
   state = {
     photos: [],
     quotes: [],
     ideas: [],
-    activities: []
-    // events: []
+    activities: [],
+    events: []
   }
 
   currentUserId = parseInt(sessionStorage.getItem("id")) //Get the current userid and convert the string to a number.
@@ -200,26 +200,14 @@ class ApplicationViews extends Component {
         })
       })
   }
-
-  //   IdeaManager.getAll().then(allIdeas => {
-  //     this.setState({
-  //       ideas: allIdeas
-  //     })
-  //   })
-
-  //   ActivityManager.getAll().then(allActivities => {
-  //     this.setState({
-  //       activities: allActivities
-  //     })
-  //   })
-
-  //   EventbriteManager.getEventsByTime("this_week").then(allEventsNashville => {
-  //     this.setState({
-  //       events: allEventsNashville.events
-  //     })
-  //     console.log("Eventbrite events", allEventsNashville)
-  //   })
-  // }
+  getEventbriteevents = () => {
+    EventbriteManager.getEventsByTime("this_week").then(allEventsNashville => {
+      this.setState({
+        events: allEventsNashville.events
+      })
+      console.log("Eventbrite events", allEventsNashville)
+    })
+  }
 
   render() {
     return (
@@ -352,6 +340,18 @@ class ApplicationViews extends Component {
             )
           }}
         />
+        <Route
+          path="/My_EventbriteList"
+          render={props => {
+            return (
+              <EventbriteItems
+                {...props}
+                currentUserId={this.currentUserId}
+                updateActivity={this.updateActivity}
+              />
+            )
+          }}
+        />
         {/* <Route
           exact
           path="/All_Items"
@@ -367,9 +367,17 @@ class ApplicationViews extends Component {
             )
           }}
         /> */}
-        {/* Logout Route Needed */}
       </React.Fragment>
     )
   }
 }
 export default withRouter(ApplicationViews)
+
+//DELETE Later---
+// EventbriteManager.getEventsByTime("this_week").then(allEventsNashville => {
+//   this.setState({
+//     events: allEventsNashville.events
+//   })
+//   console.log("Eventbrite events", allEventsNashville)
+// })
+// }
