@@ -14,6 +14,26 @@
       "id": 3,
       "username": "Ben",
       "password": "Ben"
+    },
+    {
+      "username": "Mandy",
+      "password": "Mandy",
+      "id": 4
+    },
+    {
+      "username": "Mandy2",
+      "password": "Mandy2",
+      "id": 5
+    },
+    {
+      "username": "Mandy3",
+      "password": "Mandy3",
+      "id": 6
+    },
+    {
+      "username": "Mandy5",
+      "password": "Mandy5",
+      "id": 7
     }
   ],
   "photos": [
