@@ -25,11 +25,22 @@ class Login extends Component {
     )
   }
 
+  postUser(newUser) {
+    return fetch(`http://localhost:1717/users`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newUser)
+    }).then(data => data.json())
+  }
+
+  //For logging in a user
   findCurrentUser = event => {
     event.preventDefault()
     console.log("click works")
     if (this.state.username === "" || this.state.password === "") {
-      window.alert("Please fill out missing section")
+      window.alert("Please fill in all fields")
     } else {
       const user = {
         username: this.state.username,
@@ -63,6 +74,49 @@ class Login extends Component {
     }
   }
 
+  //For registering a user
+  addThisUser = event => {
+    event.preventDefault()
+    if (this.state.username === "" || this.state.password === "") {
+      window.alert("Please fill in all fields")
+    } else {
+      const user = {
+        username: this.state.username,
+        password: this.state.password
+      }
+      this.getUser().then(data => {
+        //Checking for the presence of a value in the data[0] location, i.e., that it is not undefined
+        if (data[0]) {
+          if (
+            //If the user and password exists in the database already...
+            this.state.username === data[0].username &&
+            this.state.password === data[0].password
+          ) {
+            window.alert("You already exist in our system!")
+            sessionStorage.setItem("id", data[0].id)
+            this.props.setAuthState()
+            this.props.history.push("/My_Favorites")
+          } else if (
+            //If the user exists in the database but the password is incorrect...
+            this.state.username === data[0].username &&
+            this.state.password !== data[0].password
+          ) {
+            window.alert(
+              "You already exist in our system! Enter the correct password and press Login."
+            )
+          }
+        } else {
+          //Register the user...
+          this.postUser(user).then(postedUser => {
+            sessionStorage.setItem("id", postedUser.id)
+            this.props.setAuthState()
+            this.props.history.push("/My_Photos")
+          })
+        }
+      })
+    }
+  }
+
   render() {
     return (
       <div className="loginform">
@@ -83,7 +137,21 @@ class Login extends Component {
             onChange={this.handleFieldChangePassword}
           />
         </div>
-        <button onClick={this.findCurrentUser}>Login</button>
+        <button onClick={this.findCurrentUser} className="btn btn-primary mb-5">
+          Login
+        </button>
+        <div className="registerinfo">
+          <label className="mr-3">
+            Not a user yet? Enter username and password fields above and then
+          </label>
+          <a
+            href="#"
+            className="btn btn-outline-secondary"
+            onClick={this.addThisUser}
+          >
+            Click Here to Register
+          </a>
+        </div>
       </div>
     )
   }
