@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { Button, ButtonGroup } from "reactstrap"
 import "./MyActivities.css"
 import ActivityManager from "../../modules/ActivityManager"
+import EventbriteManager from "../../modules/EventbriteManager"
 
 export default class MyActivities extends Component {
   state = {
@@ -21,6 +22,13 @@ export default class MyActivities extends Component {
 
   onRadioBtnClick(radioSelected) {
     this.setState({ isfavorite: radioSelected }) //The value of isfavorite corresponds to what is selected by the radio button
+  }
+
+  //TODO: Start coding from here----->
+  handleOnClickBringEventbriteList = () => {
+    EventbriteManager.getEventsByTime("this_week").then(() => {
+      console.log("Oh boy")
+    })
   }
 
   handleOnClickAddActivityButton = () => {
@@ -55,6 +63,12 @@ export default class MyActivities extends Component {
           <div className="form-container w-25">
             <div className="form-group">
               <label htmlFor="addaactivity">Want to add an activity?</label>
+              <button
+                className="bringlist"
+                onClick={this.handleOnClickBringEventbriteList}
+              >
+                Bring Me a List to Choose From
+              </button>
               <textarea
                 value={this.state.value}
                 className="form-control"
