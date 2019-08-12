@@ -43,6 +43,8 @@ export default class MyActivities extends Component {
 
   componentDidMount() {
     this.props.getMyActivities()
+    this.setState({ value: this.props.eventurl })
+    this.props.onClickResetEventUrl("")
   }
 
   render() {
@@ -54,13 +56,21 @@ export default class MyActivities extends Component {
         <div className="activity-page-container">
           <div className="form-container w-25">
             <div className="form-group">
-              <label htmlFor="addaactivity">Want to add an activity?</label>
+              <label htmlFor="addaactivity" className="mr-3">
+                Want to add an activity?
+              </label>
+              <button
+                className="btn btn-info"
+                onClick={() => this.props.history.push(`/My_EventbriteList`)}
+              >
+                Choose from a List
+              </button>
               <textarea
                 value={this.state.value}
                 className="form-control"
                 id="addaactivity"
                 rows="3"
-                placeholder="(Enter the Eventbrite url address here...)"
+                placeholder="(Click the button above or enter web url here)"
                 onChange={this.handleOnChangeActivityUrl}
               />
               <label htmlFor="addanickname">Short Description/Title</label>

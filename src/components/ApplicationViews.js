@@ -8,6 +8,7 @@ import PhotoManager from "../modules/PhotoManager"
 import QuoteManager from "../modules/QuoteManager"
 import IdeaManager from "../modules/IdeaManager"
 import ActivityManager from "../modules/ActivityManager"
+import EventbriteManager from "../modules/EventbriteManager"
 import MyPhotos from "./changephotos/MyPhotos"
 import MyQuotes from "./changequotes/MyQuotes"
 import QuoteEditForm from "./changequotes/QuoteEditForm"
@@ -15,15 +16,16 @@ import MyIdeas from "./changeideas/MyIdeas"
 import IdeaEditForm from "./changeideas/IdeaEditForm"
 import MyActivities from "./changeactivities/MyActivities"
 import ActivityEditForm from "./changeactivities/ActivityEditForm"
-// import EventbriteManager from "../modules/EventbriteManager"
+import EventbriteItems from "./changeactivities/Eventbriteitems"
 
 class ApplicationViews extends Component {
   state = {
     photos: [],
     quotes: [],
     ideas: [],
-    activities: []
-    // events: []
+    activities: [],
+    events: [],
+    eventurl: "" //Used to set the url of an event when selected
   }
 
   currentUserId = parseInt(sessionStorage.getItem("id")) //Get the current userid and convert the string to a number.
@@ -201,25 +203,26 @@ class ApplicationViews extends Component {
       })
   }
 
-  //   IdeaManager.getAll().then(allIdeas => {
-  //     this.setState({
-  //       ideas: allIdeas
-  //     })
-  //   })
+  //Get all events for a specific week in Nashville using Eventbrite.
+  getEventbriteevents = () => {
+    EventbriteManager.getEventsByTime("this_week").then(allEventsNashville => {
+      this.setState({
+        events: allEventsNashville.events
+      })
+      console.log("Eventbrite events", allEventsNashville.events)
+    })
+  }
 
-  //   ActivityManager.getAll().then(allActivities => {
-  //     this.setState({
-  //       activities: allActivities
-  //     })
-  //   })
+  //Sets the value of eventurl based on the value being passed in.
+  onClickEventChosen = theurlcomingin => {
+    this.setState({ eventurl: theurlcomingin })
+    this.props.history.push(`/My_Activities`)
+  }
 
-  //   EventbriteManager.getEventsByTime("this_week").then(allEventsNashville => {
-  //     this.setState({
-  //       events: allEventsNashville.events
-  //     })
-  //     console.log("Eventbrite events", allEventsNashville)
-  //   })
-  // }
+  //This resets the value of eventurl in Application Views to its default value.
+  onClickResetEventUrl = theurlcomingin => {
+    this.setState({ eventurl: theurlcomingin })
+  }
 
   render() {
     return (
@@ -336,6 +339,8 @@ class ApplicationViews extends Component {
                 getMyActivities={this.getMyActivities}
                 currentUserId={this.currentUserId}
                 deleteActivity={this.deleteActivity}
+                onClickResetEventUrl={this.onClickResetEventUrl}
+                eventurl={this.state.eventurl}
               />
             )
           }}
@@ -352,22 +357,20 @@ class ApplicationViews extends Component {
             )
           }}
         />
-        {/* <Route
-          exact
-          path="/All_Items"
+        <Route
+          path="/My_EventbriteList"
           render={props => {
-            //The path is to all items
             return (
-              <AllItems
-                photos={this.state.photos}
-                quotes={this.state.quotes}
-                ideas={this.state.ideas}
-                activities={this.state.activities}
+              <EventbriteItems
+                {...props}
+                events={this.state.events}
+                currentUserId={this.currentUserId}
+                getEventbriteevents={this.getEventbriteevents}
+                onClickEventChosen={this.onClickEventChosen}
               />
             )
           }}
-        /> */}
-        {/* Logout Route Needed */}
+        />
       </React.Fragment>
     )
   }
