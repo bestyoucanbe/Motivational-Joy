@@ -65,7 +65,7 @@ class Login extends Component {
             console.log("yup")
             sessionStorage.setItem("id", data[0].id)
             this.props.setAuthState()
-            this.props.history.push("/My_Favorites")
+            this.props.history.push("/My_Photos")
           } else {
             window.alert("Please use a valid login or register")
           }
@@ -95,7 +95,7 @@ class Login extends Component {
             window.alert("You already exist in our system!")
             sessionStorage.setItem("id", data[0].id)
             this.props.setAuthState()
-            this.props.history.push("/My_Favorites")
+            this.props.history.push("/My_Photos")
           } else if (
             //If the user exists in the database but the password is incorrect...
             this.state.username === data[0].username &&
