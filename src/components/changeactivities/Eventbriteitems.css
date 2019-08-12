@@ -1,0 +1,17 @@
+.events-page-container {
+  display: flex;
+}
+
+.events-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 10rem;
+}
+
+.headingmyevents {
+  text-align: center;
+}

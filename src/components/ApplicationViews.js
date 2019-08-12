@@ -24,7 +24,8 @@ class ApplicationViews extends Component {
     quotes: [],
     ideas: [],
     activities: [],
-    events: []
+    events: [],
+    eventurl: "" //Used to set the url of an event when selected
   }
 
   currentUserId = parseInt(sessionStorage.getItem("id")) //Get the current userid and convert the string to a number.
@@ -212,9 +213,15 @@ class ApplicationViews extends Component {
     })
   }
 
-  //FIXME:  Remove this after testing is completed!
-  componentDidMount() {
-    this.getEventbriteevents()
+  //Sets the value of eventurl based on the value being passed in.
+  onClickEventChosen = theurlcomingin => {
+    this.setState({ eventurl: theurlcomingin })
+    this.props.history.push(`/My_Activities`)
+  }
+
+  //This resets the value of eventurl in Application Views to its default value.
+  onClickResetEventUrl = theurlcomingin => {
+    this.setState({ eventurl: theurlcomingin })
   }
 
   render() {
@@ -332,6 +339,8 @@ class ApplicationViews extends Component {
                 getMyActivities={this.getMyActivities}
                 currentUserId={this.currentUserId}
                 deleteActivity={this.deleteActivity}
+                onClickResetEventUrl={this.onClickResetEventUrl}
+                eventurl={this.state.eventurl}
               />
             )
           }}
@@ -357,25 +366,11 @@ class ApplicationViews extends Component {
                 events={this.state.events}
                 currentUserId={this.currentUserId}
                 getEventbriteevents={this.getEventbriteevents}
+                onClickEventChosen={this.onClickEventChosen}
               />
             )
           }}
         />
-        {/* <Route
-          exact
-          path="/All_Items"
-          render={props => {
-            //The path is to all items
-            return (
-              <AllItems
-                photos={this.state.photos}
-                quotes={this.state.quotes}
-                ideas={this.state.ideas}
-                activities={this.state.activities}
-              />
-            )
-          }}
-        /> */}
       </React.Fragment>
     )
   }

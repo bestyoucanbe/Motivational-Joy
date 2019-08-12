@@ -10,7 +10,6 @@ export default class IdeaEditForm extends Component {
     radioSelected: true
   }
 
-  //FIXME: Remove this from here and have it passed in from Application Views
   currentUserId = parseInt(sessionStorage.getItem("id"))
 
   handleOnChangeIdea = event => {

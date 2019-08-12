@@ -43,6 +43,8 @@ export default class MyActivities extends Component {
 
   componentDidMount() {
     this.props.getMyActivities()
+    this.setState({ value: this.props.eventurl })
+    this.props.onClickResetEventUrl("")
   }
 
   render() {
@@ -68,7 +70,7 @@ export default class MyActivities extends Component {
                 className="form-control"
                 id="addaactivity"
                 rows="3"
-                placeholder="(Click the button above or enter web url here...)"
+                placeholder="(Click the button above or enter web url here)"
                 onChange={this.handleOnChangeActivityUrl}
               />
               <label htmlFor="addanickname">Short Description/Title</label>
