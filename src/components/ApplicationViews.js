@@ -8,6 +8,7 @@ import PhotoManager from "../modules/PhotoManager"
 import QuoteManager from "../modules/QuoteManager"
 import IdeaManager from "../modules/IdeaManager"
 import ActivityManager from "../modules/ActivityManager"
+import EventbriteManager from "../modules/EventbriteManager"
 import MyPhotos from "./changephotos/MyPhotos"
 import MyQuotes from "./changequotes/MyQuotes"
 import QuoteEditForm from "./changequotes/QuoteEditForm"
@@ -15,7 +16,7 @@ import MyIdeas from "./changeideas/MyIdeas"
 import IdeaEditForm from "./changeideas/IdeaEditForm"
 import MyActivities from "./changeactivities/MyActivities"
 import ActivityEditForm from "./changeactivities/ActivityEditForm"
-import EventbriteManager from "../modules/EventbriteManager"
+import EventbriteItems from "./changeactivities/Eventbriteitems"
 
 class ApplicationViews extends Component {
   state = {
@@ -200,13 +201,20 @@ class ApplicationViews extends Component {
         })
       })
   }
+
+  //Get all events for a specific week in Nashville using Eventbrite.
   getEventbriteevents = () => {
     EventbriteManager.getEventsByTime("this_week").then(allEventsNashville => {
       this.setState({
         events: allEventsNashville.events
       })
-      console.log("Eventbrite events", allEventsNashville)
+      console.log("Eventbrite events", allEventsNashville.events)
     })
+  }
+
+  //FIXME:  Remove this after testing is completed!
+  componentDidMount() {
+    this.getEventbriteevents()
   }
 
   render() {
@@ -346,8 +354,9 @@ class ApplicationViews extends Component {
             return (
               <EventbriteItems
                 {...props}
+                events={this.state.events}
                 currentUserId={this.currentUserId}
-                updateActivity={this.updateActivity}
+                getEventbriteevents={this.getEventbriteevents}
               />
             )
           }}
@@ -372,12 +381,3 @@ class ApplicationViews extends Component {
   }
 }
 export default withRouter(ApplicationViews)
-
-//DELETE Later---
-// EventbriteManager.getEventsByTime("this_week").then(allEventsNashville => {
-//   this.setState({
-//     events: allEventsNashville.events
-//   })
-//   console.log("Eventbrite events", allEventsNashville)
-// })
-// }
