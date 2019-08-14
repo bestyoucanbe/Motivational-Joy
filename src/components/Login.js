@@ -42,18 +42,10 @@ class Login extends Component {
     if (this.state.username === "" || this.state.password === "") {
       window.alert("Please fill in all fields")
     } else {
-      const user = {
-        username: this.state.username,
-        password: this.state.password
-      }
-      //user ==> The above object containing the username and password obtained from user input in username and password fields
-      //this sets a callback function--that gets executed after the state has been set
-      this.setState(user, () => {
-        //The getUser function is shown above!
-        this.getUser().then(data => {
-          console.log("data from getUser", data)
-          //Console log the value of state...what is in Username and Password?
-          console.log("this.state", this.state)
+      //The getUser function shown above fetches the data of the first item matching the user input field.
+      this.getUser().then(data => {
+        //If there is a value returned, i.e., that it is NOT undefined, then...
+        if (data[0]) {
           //If the what is in the input fields match what is existing in the users resource, then:
           //1.  Set Session Storage
           //2.  Call the setAuthState function in Motivation Joy to set set the value of authenticated
@@ -62,15 +54,15 @@ class Login extends Component {
             this.state.username === data[0].username &&
             this.state.password === data[0].password
           ) {
-            console.log("yup")
             sessionStorage.setItem("id", data[0].id)
             this.props.setAuthState()
             this.props.history.push("/My_Photos")
-          } else {
-            window.alert("Please use a valid login or register")
           }
-        })
+        } else {
+          window.alert("Please use a valid login or register")
+        }
       })
+      // })
     }
   }
 
@@ -102,7 +94,7 @@ class Login extends Component {
             this.state.password !== data[0].password
           ) {
             window.alert(
-              "You already exist in our system! Enter the correct password and press Login."
+              "You already exist in our system. Please enter the correct password and press Login."
             )
           }
         } else {
@@ -141,14 +133,10 @@ class Login extends Component {
           Login
         </button>
         <div className="registerinfo">
-          <label className="mr-3">
+          <label className="registermessage mr-3">
             Not a user yet? Enter username and password fields above and then
           </label>
-          <a
-            href="#"
-            className="btn btn-outline-secondary"
-            onClick={this.addThisUser}
-          >
+          <a href="#" className="btn btn-secondary" onClick={this.addThisUser}>
             Click Here to Register
           </a>
         </div>
