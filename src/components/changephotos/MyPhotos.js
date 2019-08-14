@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Button, ButtonGroup } from "reactstrap"
+import { Button, ButtonGroup, CustomInput } from "reactstrap"
 import "./MyPhotos.css"
 import PhotoManager from "../../modules/PhotoManager"
 
@@ -28,6 +28,13 @@ export default class MyPhotos extends Component {
       this.setState({ value: "" }) //Clears the field of its values
       this.props.getMyPhotos()
     })
+  }
+
+  //Update photos after value of checkbox is changed.
+  changeMyFavorite = selectedphoto => {
+    const copyPhoto = { ...selectedphoto }
+    copyPhoto.isfavorite = !copyPhoto.isfavorite
+    PhotoManager.put(copyPhoto).then(() => this.props.getMyPhotos())
   }
 
   componentDidMount() {
@@ -89,6 +96,29 @@ export default class MyPhotos extends Component {
                   alt="Card cap"
                 />
                 <div className="card-body">
+                  <div class="input-group mr-5 mb-3">
+                    <div className="input-group-prepend">
+                      <div className="input-group-text">
+                        {console.log(
+                          "eachphoto.isfavorite",
+                          eachphoto.isfavorite
+                        )}
+                        {/* <input
+                          type="checkbox"
+                          checked={eachphoto.isfavorite}
+                          onChange={this.changeMyFavorite(eachphoto)}
+                        /> */}
+                        <b className="text-danger">Favorite:</b>
+                        <CustomInput
+                          type="checkbox"
+                          id="cb-1"
+                          checked={eachphoto.isfavorite}
+                          onChange={this.changeMyFavorite(eachphoto)}
+                        />
+                        <label for="myfavorite">Favorite</label>
+                      </div>
+                    </div>
+                  </div>
                   <a
                     href="#"
                     className="btn btn-danger"
