@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Button, ButtonGroup } from "reactstrap"
+import { Button, ButtonGroup, CustomInput } from "reactstrap"
 import "./MyPhotos.css"
 import PhotoManager from "../../modules/PhotoManager"
 
@@ -28,6 +28,14 @@ export default class MyPhotos extends Component {
       this.setState({ value: "" }) //Clears the field of its values
       this.props.getMyPhotos()
     })
+  }
+
+  //Update photos after value of checkbox is changed.
+  changeMyFavorite = selectedphoto => {
+    console.log("selected photo", selectedphoto)
+    const copyPhoto = { ...selectedphoto }
+    copyPhoto.isfavorite = !copyPhoto.isfavorite
+    PhotoManager.put(copyPhoto).then(() => this.props.getMyPhotos())
   }
 
   componentDidMount() {
@@ -89,6 +97,15 @@ export default class MyPhotos extends Component {
                   alt="Card cap"
                 />
                 <div className="card-body">
+                  <div className="favorites-on-cardgroup mb-3">
+                    <b className="text-danger">Favorite:</b>
+                    <input
+                      type="checkbox"
+                      id="myfavorite"
+                      checked={eachphoto.isfavorite}
+                      onChange={() => this.changeMyFavorite(eachphoto)}
+                    />
+                  </div>
                   <a
                     href="#"
                     className="btn btn-danger"

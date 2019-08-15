@@ -15,3 +15,8 @@
 .headingmypho {
   text-align: center;
 }
+
+.favorites-on-cardgroup {
+  display: flex;
+  align-items: baseline;
+}
