@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/motivational-joy/static/css/main.6b1dead3.chunk.css",
+    "main.js": "/motivational-joy/static/js/main.e85366be.chunk.js",
+    "main.js.map": "/motivational-joy/static/js/main.e85366be.chunk.js.map",
+    "runtime~main.js": "/motivational-joy/static/js/runtime~main.a93945ca.js",
+    "runtime~main.js.map": "/motivational-joy/static/js/runtime~main.a93945ca.js.map",
+    "static/css/2.266e55a5.chunk.css": "/motivational-joy/static/css/2.266e55a5.chunk.css",
+    "static/js/2.76871f9a.chunk.js": "/motivational-joy/static/js/2.76871f9a.chunk.js",
+    "static/js/2.76871f9a.chunk.js.map": "/motivational-joy/static/js/2.76871f9a.chunk.js.map",
+    "index.html": "/motivational-joy/index.html",
+    "precache-manifest.30df651b40eef38831f64aa97330fcbc.js": "/motivational-joy/precache-manifest.30df651b40eef38831f64aa97330fcbc.js",
+    "service-worker.js": "/motivational-joy/service-worker.js",
+    "static/css/2.266e55a5.chunk.css.map": "/motivational-joy/static/css/2.266e55a5.chunk.css.map",
+    "static/css/main.6b1dead3.chunk.css.map": "/motivational-joy/static/css/main.6b1dead3.chunk.css.map"
+  }
+}
