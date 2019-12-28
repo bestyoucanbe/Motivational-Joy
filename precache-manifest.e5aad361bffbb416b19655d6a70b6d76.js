@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3242a07199ecd83c3305f3fdfe857bfd",
+    "revision": "cc9a2df3bc73dc35630f68daae4f12b0",
     "url": "/Motivational-Joy/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Motivational-Joy/static/css/2.266e55a5.chunk.css"
   },
   {
-    "revision": "2c09bc21fc38c211dbfc",
+    "revision": "0e9e6135b2b7b4195d1d",
     "url": "/Motivational-Joy/static/css/main.6b1dead3.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Motivational-Joy/static/js/2.76871f9a.chunk.js"
   },
   {
-    "revision": "2c09bc21fc38c211dbfc",
-    "url": "/Motivational-Joy/static/js/main.a4a0ecaf.chunk.js"
+    "revision": "0e9e6135b2b7b4195d1d",
+    "url": "/Motivational-Joy/static/js/main.60ccbd19.chunk.js"
   },
   {
     "revision": "7a5471ea29d0965bc1cb",
