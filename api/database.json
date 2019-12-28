@@ -44,6 +44,11 @@
       "username": "risha1994",
       "password": "DRAGON101",
       "id": 9
+    },
+    {
+      "username": "admindemo",
+      "password": "admindemo",
+      "id": 10
     }
   ],
   "photos": [
@@ -70,6 +75,12 @@
       "url": "https://lh3.googleusercontent.com/Y71a44Qf5vwGiAS7W_Qzomua2tmR_65ksUdv_rhY_Wp02RpapKakEJ-9MYkc9sIHfdwO4QCGthvoAs-wpz94fKDY4tTTs0IPDnnMzMoTDjwkJtJQVXKVdP0OpQcxN2lMWX0-kEj8Ts5ORUT0bwFtjh6M0pGlyPae90TwPATgvaLdHTuzbJHEzfB5bchyeucX3a9RRmSb1ENrOkQtJpdf7qj78cOkBuPdWcLG7nC_B__DyMORzx7N2ndsi3GBYqua44igxZSfBpjhRUW7Y-3UNYYtGsBNKtxYegRauo_9AUZUk-HDWlF0S0gn_0kV4fVk4q_umtk1ttI9t2GjCCgdLTrlULNzYHgjK8cnJOX0-SL6y7e24DMEwlLKTIY-X4TGm6PDg3dIjT0iFqSgIudHt07Hf7QlerR1ZygpVUxhTV6EAqJO9swQkClx4lGBTB2c0o0TmO7PNJZlsFLMjtcFwCo6yD4UICdrq8OpUcGrXsvk5t5YAFcDX8Ti2t9MM2fiWj8zkPgCokBDRu2_i4SQUmlbXzOfLIcJUb2WWG-JIsRM2uEIo3acDdDQ7n_y1FM_AaOy3_dAMH6Z7TqrZIPmgjHa5jEDKIxOLLBElB0Enq4ClEWJuLKpYyYCXG2iU4-8szVRqfWoX9FyUrI5jjjtF9ygxZg7t_wW=w475-h843-no",
       "isfavorite": true,
       "id": 4
+    },
+    {
+      "userid": 1,
+      "url": "https://lh3.googleusercontent.com/nFMIgxEdy21sOfpiSs1lEFXnfwVOZlNrj5G9tgLNdqttT8p46urWdLoyiBNxcmQRavCVPt4At7RLne6VYNXos_reb7uYrSCGIgjHqdQtkGjyQAJ8_Pp8Nhg909iH6JSx3ehxX2-VDy00fhycFZngZDSNuZLBl5NRsudtMaXP0RcRtTuC8sG0hUdQTuOv5yAOiMnpOT-miD-m_q9-iftI-XhuhFUS64Y-BLpO-CRP6Xrr9uWuJY5vLIBbtctLh8RAo4g-s-f7xNEQMWQayViLWaWbvIQTNsamEvfqFQ_MckFL1ZyeE7cdYjjwKvi6zQLln2fc07zcpZkeS2XJRptAWCRky3GyfvFYOMyCdAiCMOaKgaiWF00gnoJJraMoAt0a89vPb0pRa554cNHlDKw7PmCZvicEEQDtahS26wtRkesvqM5L4poPvi5b0GpMyzCf6TwILIshixC3U65IlqrZTLgCMGvDw2JyB6LmUK8XiPI3fs3DiLK42qinv6WM7R5zHSg9udcly6QEzhoTLcFQ2Jxy5O5MSjlAFQN_GpyRanWehyIPAZPCTHlbRPFEb04P_r3mlksGLgcIIXOljxKh9revCv2QfwIWCv2tkYt_Yw1yZTZIS9yY68HplaZ0RUB0FtpocI142to483WKYkqX_kYYC00SnURxL6WX6hGx4TzVKpblblwlly0o=w475-h843-no",
+      "isfavorite": true,
+      "id": 5
     }
   ],
   "quotes": [
@@ -331,6 +342,13 @@
       "activity_url": "https://www.eventbrite.com/e/food-truck-feast-in-east-nashville-tickets-65427841435?aff=ebapi",
       "isfavorite": false,
       "id": 18
+    },
+    {
+      "id": 19,
+      "activity_nickname": "Nashville Software School",
+      "activity_url": "https://www.eventbrite.com/e/nashville-software-school-info-session-analytics-data-science-tickets-53030980089?aff=ebapi",
+      "isfavorite": true,
+      "userid": 1
     }
   ]
 }
