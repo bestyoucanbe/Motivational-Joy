@@ -1,4 +1,6 @@
-const remoteURL = "http://localhost:1717"
+import { apiUrl } from "./api"
+
+const remoteURL = apiUrl
 
 export default {
   get(id) {
