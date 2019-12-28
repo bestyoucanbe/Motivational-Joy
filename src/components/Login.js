@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { withRouter } from "react-router"
 import "./Login.css"
+import { apiUrl } from "./../modules/api"
 
 class Login extends Component {
   state = {
@@ -20,13 +21,13 @@ class Login extends Component {
 
   //Fetch the value from the users resource for the username put into the input field (if the data exists, of course!)
   getUser = () => {
-    return fetch(`http://localhost:1717/users?q=${this.state.username}`).then(
+    return fetch(`${apiUrl}/users?q=${this.state.username}`).then(
       data => data.json()
     )
   }
 
   postUser(newUser) {
-    return fetch(`http://localhost:1717/users`, {
+    return fetch(`${apiUrl}/users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
